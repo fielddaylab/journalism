@@ -18,8 +18,18 @@ You call back. Your editor tells you the situation: rain has overwhelmed the dam
 (set: $egghead to 1, $resourceful to 1, $endurance to 1, $techie to 1, $social to 1, $trust to 1)
 
 (set: $StoryInventory to (datamap:))
-
 (set: $gainedInventory to &quot;Gained snippet:&quot;)
+
+(set: $eggheadName to &quot;Egghead&quot;, 
+$resourcefulName to &quot;Cherry Scout&quot;, 
+$enduranceName to &quot;Endurance&quot;, 
+$techieName to &quot;Techie&quot;, 
+$socialName to &quot;Social Butterfly&quot;, 
+$trustName to &quot;Pillar of the Community&quot;)
+
+(set: $badSnippetPoints to 10,
+$goodSnippetPoints to 15,
+$greatSnippetPoints to 20)
 }
 [[Egghead option]]
 [[Put on your rain gear]]
@@ -27,157 +37,164 @@ You call back. Your editor tells you the situation: rain has overwhelmed the dam
 [[Check your camera equipment]]
 [[Check &quot;Squawker&quot; to see if anyone has posted about the storm]]
 [[Trust option]]</tw-passagedata><tw-passagedata pid="2" name="RESOURCEFUL CHARACTER" tags="" position="100,225" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="3" name="EGGHEAD CHARACTER" tags="" position="100,100" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="4" name="ENDURANCE CHARACTER" tags="" position="100,350" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="5" name="SOCIAL BUTTERFLY CHARACTER" tags="" position="100,675" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="6" name="TECHIE CHARACTER" tags="" position="100,550" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="7" name="TRUST CHARACTER" tags="" position="100,800" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="8" name="4AM" tags="" position="200,925" size="200,100">[[5AM]]</tw-passagedata><tw-passagedata pid="9" name="5AM" tags="" position="625,925" size="200,100">[[6AM]]
-</tw-passagedata><tw-passagedata pid="10" name="6AM" tags="" position="975,925" size="200,100">[[7AM]]</tw-passagedata><tw-passagedata pid="11" name="7AM" tags="" position="1175,925" size="200,100">[[8AM]]
+</tw-passagedata><tw-passagedata pid="10" name="6AM" tags="" position="975,925" size="200,100">[[7AM]]</tw-passagedata><tw-passagedata pid="11" name="7AM" tags="" position="1250,925" size="200,100">[[8AM]]
 </tw-passagedata><tw-passagedata pid="12" name="8AM" tags="" position="1850,950" size="200,100">[[9AM]]
 </tw-passagedata><tw-passagedata pid="13" name="9AM" tags="" position="2300,950" size="200,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="14" name="Egghead option" tags="" position="375,100" size="100,100">
-//+1 Egghead//
+//+1 $eggheadName//
 (set: $egghead to it + 1)
 [[Off to work]]</tw-passagedata><tw-passagedata pid="15" name="Put on your rain gear" tags="" position="375,225" size="100,100">You pull on your heavy rubber rainboots and coat. You&#39;ll need to gear up if you want to brave this storm.
 
-//+1 Resourcefulness//
+//+1 $resourcefulName//
 (set: $resourceful to it + 1)
 [[Off to work]] </tw-passagedata><tw-passagedata pid="16" name="Get some breakfast" tags="" position="375,350" size="100,100">You grab some breakfast first, to gather your strength. You didn’t have time to grocery shop this week, but your fridge is full of cherry-themed gifts from your aggressively friendly new neighbors—cherry jam, cherry crumble, cherry summer sausage. You eat some of everything.
 
-//+1 Endurance//
+//+1 $enduranceName//
 (set: $endurance to it + 1)
 [[Off to work]]</tw-passagedata><tw-passagedata pid="17" name="Check &quot;Squawker&quot; to see if anyone has posted about the storm" tags="" position="375,675" size="100,100">Learn something, read what’s happening? Get permission to use someone’s photo or quote 
 
-//$gainedInventory Squawker post//
+//$gainedInventory Quote: Squawker post//
 
-[[Off to work]]</tw-passagedata><tw-passagedata pid="18" name="Trust option" tags="" position="375,800" size="100,100">
+(set: $StoryInventory to it + (dm: &quot;Quote: Squawker post&quot;, $goodSnippetPoints))
+[[Off to work]]</tw-passagedata><tw-passagedata pid="18" name="Trust option" tags="" position="375,800" size="100,100">//+1 $trustName//
 (set: $trust to it + 1)
 [[Off to work]]</tw-passagedata><tw-passagedata pid="19" name="Off to work" tags="" position="500,450" size="100,100">You head outside, ready to brave the storm. It’s Twin Lakes, the most ~~boring~~ idyllic little town ever. Your editor must’ve been being dramatic. How bad could it be?
  
 Water is rushing down the street and bubbling out of storm drains. You find your neighbor trying to gather up her backyard chickens that have escaped their coop. (text-style:&quot;shudder&quot;)[“Help!”] she cries, her arms full of clucking, feathered things.
-(set: $officetime1 to &quot;2 hours&quot;, $Office1DNRCalled to false, $Office1PoliceCalled to false, $Office1CityCalled to false, $Office1WeatherChecked to false, $Office1SocialChecked to false, $Office1CoworkerChecked to false)
+(set: $officetime1 to &quot;2 hours&quot;)
 
 [[Help her]]
 [[There&#39;s no time, I have a scoop to catch!]]</tw-passagedata><tw-passagedata pid="20" name="Check your camera equipment" tags="" position="375,550" size="100,100">You run around the house getting ready. (find charger cables, zoom camera lens, clicker to do a remote photo, tripod for phone) 
 
-//+1 Techie//
+//+1 $techieName//
 (set: $techie to it + 1)
 [[Off to work]] </tw-passagedata><tw-passagedata pid="21" name="Help her" tags="" position="625,675" size="200,100">You decide to help her. You run around after the chickens, feeling slightly ridiculous. Soon the chickens are all safely in her garage, running in circles. Your neighbor is grateful for your help. She offers you two cartons of fresh eggs.
 
 
-//+1 Social Butterfly//
-//+1 Resourceful//
+//+1 $socialName//
+//+1 $resourcefulName//
 
 (set: $social to it + 1, $resourceful to it +1)
-[[Arrive at work]]</tw-passagedata><tw-passagedata pid="22" name="There&#39;s no time, I have a scoop to catch!" tags="" position="625,225" size="100,200">You decide to get into the office as soon as possible. Your neighbor can get her own coop in a group!
+[[Arrive at work]]</tw-passagedata><tw-passagedata pid="22" name="There&#39;s no time, I have a scoop to catch!" tags="" position="625,300" size="100,200">You decide to get into the office as soon as possible. Your neighbor can get her own coop in a group!
 
 [[Load your bike, that could be useful later.]]
-[[We&#39;re in a hurry, there&#39;s no need to bring the bike!]]</tw-passagedata><tw-passagedata pid="23" name="We&#39;re in a hurry, there&#39;s no need to bring the bike!" tags="" position="750,200" size="100,100">You get in your car and head toward work. You’re shocked to see your usual road to work covered in water. Cars are abandoned, and a local craft shop owner is piling up sandbags in front of her shop. 
+[[We&#39;re in a hurry, there&#39;s no need to bring the bike!]]</tw-passagedata><tw-passagedata pid="23" name="We&#39;re in a hurry, there&#39;s no need to bring the bike!" tags="" position="750,225" size="100,100">You get in your car and head toward work. You’re shocked to see your usual road to work covered in water. Cars are abandoned, and a local craft shop owner is piling up sandbags in front of her shop. 
 
 (if: $techie is &gt;1)[Thankfully, you checked all your camera equipment and brought the right stuff! You snap a great pic of the abandoned cars juxtaposed with the sand-stacking shopkeep.
 
-//$gainedInventory Abandoned car photos//
+//$gainedInventory Photo: Abandoned cars//
+(set: $StoryInventory to it + (dm: &quot;Photo: Abandoned cars&quot;, $greatSnippetPoints))
 ]
 (elseif: $social is&gt;1)[The shop owner seems a little exasperated, but your effortless charm seems to defuse some tension. You have a lovely conversation, and get a good quote from her.
 
-//$gainedInventory Good shopkeep quote//
+//$gainedInventory Quote: Friendly shopkeep//
+(set: $StoryInventory to it + (dm: &quot;Quote: Friendly shopkeep&quot;, $goodSnippetPoints))
 ]
 (elseif: $endurance is&gt;1)[The shop owner seems a little exasperated, but you rush over, emboldened by your cherry breakfast packed with healthy antioxidants. She seems thankful, and gives you a great quote.
 
-//$gainedInventory Good shopkeep quote//
+//$gainedInventory Quote: Friendly shopkeep//
+(set: $StoryInventory to it + (dm: &quot;Quote: Friendly shopkeep&quot;, $goodSnippetPoints))
 ]
 (else:)[The shop owner is pretty annoyed with the whole situation and isn&#39;t especially eager to talk. You suppose you could quote this, as long as you remove the profanity...
 
-//$gainedInventory Rude shopkeep quote//
+//$gainedInventory Quote: Rude shopkeep//
+(set: $StoryInventory to it + (dm: &quot;Quote: Rude shopkeep&quot;, $badSnippetPoints))
 ]
 
 [[Arrive at work]]</tw-passagedata><tw-passagedata pid="24" name="Load your bike, that could be useful later." tags="" position="750,350" size="100,100">You get in your car and head toward work. You’re shocked to see your usual road to work covered in water. 
 Boss is texting you in all caps “GET IN HERE NOW!” You don’t have time to stop and ask questions.
 
 //You can use your bike later//
-//+1 Resourcefulness//
-(set: $resourceful to it +1)
+//+1 $resourcefulName//
+(set: $resourceful to it +1, $hasBike to true)
 [[Arrive at work]]</tw-passagedata><tw-passagedata pid="25" name="Arrive at work" tags="" position="875,450" size="100,100">At the office, your editor hurries over to you. She tells you the downtown is covered in water. Half of the newspaper staff couldn’t make it into work. You’re starting to realize this might actually be a big deal.
 
-You have $officetime1 remaining.
+You have &#39;&#39;$officetime1&#39;&#39; remaining.
 
 (if: $officetime1 is &quot;2 hours&quot;)[(text-style:&quot;shudder&quot;)[RRRRING.]
 [[Answer the phone.]]
 ]
 
-(unless: $Office1WeatherChecked)[ [[Check Weather (30 minutes)]] ]
-(unless: $Office1CoworkerChecked)[ [[Look at Coworker&#39;s Files (30 minutes)]] ]
-(unless: $Office1DNRCalled)[ [[Call DNR (30 minutes)]] 					]
-(unless: $Office1PoliceCalled)[ [[Call your police contact (30 minutes)]] 	]
-(unless: $Office1CityCalled)[ [[Call your City Hall contact (30 minutes)]] 	]
-(unless: $Office1SocialChecked)[ [[Check Squawker to see what people are talking about (30 minutes)]] ]</tw-passagedata><tw-passagedata pid="26" name="Check Weather (30 minutes)" tags="" position="1000,100" size="100,100">You check the weather channel website to get the forecast. 8 inches more rain is expected!
-(set: $Office1WeatherChecked to true)
+(unless:(history: where its name contains &quot;Office 1 - Weather&quot;)&#39;s length &gt;= 1)[ [[Check the weather site (30 minutes)-&gt;Office 1 - Weather]] ]
+(unless:(history: where its name contains &quot;Office 1 - Coworker&quot;)&#39;s length &gt;= 1)[ [[Check your coworker&#39;s files (30 minutes)-&gt;Office 1 - Coworker]] ]
+(unless:(history: where its name contains &quot;Office 1 - DNR&quot;)&#39;s length &gt;= 1)[ [[Call the DNR (30 minutes)-&gt;Office 1 - DNR]] 					]
+(unless:(history: where its name contains &quot;Office 1 - Police&quot;)&#39;s length &gt;= 1)[ [[Call your police contact-&gt;Office 1 - Police]] 	]
+(unless:(history: where its name contains &quot;Office 1 - City Hall&quot;)&#39;s length &gt;= 1)[ [[Call your City Hall contact-&gt;Office 1 - City Hall]] 	]
+(unless:(history: where its name contains &quot;Office 1 - Social Media&quot;)&#39;s length &gt;= 1)[ [[Check Squawker-&gt;Office 1 - Social Media]] ]</tw-passagedata><tw-passagedata pid="26" name="Office 1 - Weather" tags="" position="1000,100" size="100,100">You check the weather channel website to get the forecast. 8 inches more rain is expected!
+
 You grab the link for an interactive flood map of the city. 
 
-//Gain map image//
-{(if: $officetime1 is &quot;2 hours&quot;)[(set: $officetime1 to &quot;1 hour 30 minutes&quot;)]
-(elseif: $officetime1 is &quot;1 hour 30 minutes&quot;)[(set: $officetime1 to &quot;1 hour&quot;)]
-(elseif: $officetime1 is &quot;1 hour&quot;)[(set: $officetime1 to &quot;30 minutes&quot;)]
-(elseif: $officetime1 is &quot;30 minutes&quot;)[ [[Time&#39;s up, submit your story!]] 
-(hide: ?ReturnToDesk)]}
-[ [[Return to your desk-&gt;Arrive at work]] ]&lt;ReturnToDesk|</tw-passagedata><tw-passagedata pid="27" name="Look at Coworker&#39;s Files (30 minutes)" tags="" position="1000,800" size="100,100">Your old coworker Jenkins (now retired) had done a bunch of interviews about flooding. You track down his computer.
-(set: $Office1CoworkerChecked to true)
+//$gainedInventory Graph: Flood map//
+(set: $StoryInventory to it + (dm: &quot;Graph: Flood map&quot;, $goodSnippetPoints))
+
+(display: &quot;Office 1 - Clock&quot;)</tw-passagedata><tw-passagedata pid="27" name="Office 1 - Coworker" tags="" position="1000,800" size="100,100">Your old coworker Jenkins (now retired) had done a bunch of interviews about flooding. You track down his computer.
+
 (if: $techie &gt; 1)[You figure that Old Jenkins probably hasn&#39;t changed from the office default password. You put it into the computer and ka-ching! You find a treasure trove of expert quotes! Looks like experts have been worrying about a flooding disaster for years now.
-//Gained scientist quotes//]
+//$gainedInventory Quote/Data: Scientist quotes//
+(set: $StoryInventory to it + (dm: &quot;Quote/Data: Scientist quotes&quot;, $greatSnippetPoints))
+]
 
 (else:)[The stone-age computer is locked, so you check in his filing cabinet. You find a DNR phone contact scrawled on a sticky note.
-//+DNR Phone Number//]
-{(if: $officetime1 is &quot;2 hours&quot;)[(set: $officetime1 to &quot;1 hour 30 minutes&quot;)]
-(elseif: $officetime1 is &quot;1 hour 30 minutes&quot;)[(set: $officetime1 to &quot;1 hour&quot;)]
-(elseif: $officetime1 is &quot;1 hour&quot;)[(set: $officetime1 to &quot;30 minutes&quot;)]
-(elseif: $officetime1 is &quot;30 minutes&quot;)[ [[Time&#39;s up, submit your story!]] 
-(hide: ?ReturnToDesk)]}
-[ [[Return to your desk-&gt;Arrive at work]] ]&lt;ReturnToDesk|</tw-passagedata><tw-passagedata pid="28" name="Call DNR (30 minutes)" tags="" position="1000,550" size="100,100">You call the DNR worker and get the info on the situation downtown. 
-(set: $Office1DNRCalled to true)
+(set: $DNRNumber to true)
+//Learned DNR Phone Number//
+]
+(display: &quot;Office 1 - Clock&quot;)</tw-passagedata><tw-passagedata pid="28" name="Office 1 - DNR" tags="" position="1000,550" size="100,100">You call the DNR worker and get the info on the situation downtown. 
+
 You ask what people can do to stay safe. 
 
-(if: $social &gt;1)[You get an especially good quote thanks to your suave and savvy arts of conversation.]
-(else:)[The DNR worker is clearly overworked, and gives you a transparently rehearsed statement.]
-
-//Gained a DNR quote//
-
-(if: $DNRnumber and $egghead &gt;1)[You suddenly remember your coworker&#39;s DNR contact, and call them too. They&#39;re very friendly, and send you some valuable data. You push your thick glasses up your nose and expertly decode the cryptic data.
-
-//Gained DNR data//]
-(elseif:$DNRnumber and $egghead &lt;2)[You suddenly remember your coworker&#39;s DNR contact, and call them too. They&#39;re very friendly, and send you some valuable-looking data. Unfortunately, you can&#39;t make heads or tails of this nonsense.]
-{(if: $officetime1 is &quot;2 hours&quot;)[(set: $officetime1 to &quot;1 hour 30 minutes&quot;)]
-(elseif: $officetime1 is &quot;1 hour 30 minutes&quot;)[(set: $officetime1 to &quot;1 hour&quot;)]
-(elseif: $officetime1 is &quot;1 hour&quot;)[(set: $officetime1 to &quot;30 minutes&quot;)]
-(elseif: $officetime1 is &quot;30 minutes&quot;)[ [[Time&#39;s up, submit your story!]] 
-(hide: ?ReturnToDesk)]}
-[ [[Return to your desk-&gt;Arrive at work]] ]&lt;ReturnToDesk|</tw-passagedata><tw-passagedata pid="29" name="Call your police contact (30 minutes)" tags="" position="1000,350" size="100,100">The police spokesperson tells you that people need to stay off the roads at all costs.
-(set: $Office1PoliceCalled to true)
-(if:$trust is &gt;1)[He also tells you about a crash that has occured and gives you quite the quotable story about someone getting stuck in the flood.
-//Gain police story//]
-(else:)[The officer seems suspicious of your credentials and tells you gruffly, &quot;just check the city map, it&#39;s all in there.&quot;
-//Gain police quote//]
-
-{(if: $officetime1 is &quot;2 hours&quot;)[(set: $officetime1 to &quot;1 hour 30 minutes&quot;)]
-(elseif: $officetime1 is &quot;1 hour 30 minutes&quot;)[(set: $officetime1 to &quot;1 hour&quot;)]
-(elseif: $officetime1 is &quot;1 hour&quot;)[(set: $officetime1 to &quot;30 minutes&quot;)]
-(elseif: $officetime1 is &quot;30 minutes&quot;)[ [[Time&#39;s up, submit your story!]] 
-(hide: ?ReturnToDesk)]}
-[ [[Return to your desk-&gt;Arrive at work]] ]&lt;ReturnToDesk|</tw-passagedata><tw-passagedata pid="30" name="Call your City Hall contact (30 minutes)" tags="" position="1000,225" size="100,100">(if: $social is &gt;1)[You brought coffee and donuts to her last time - she gives you a better interview.
+{(if: $social &gt;1)[You get an especially good quote thanks to your suave and savvy arts of conversation.
+(set: $StoryInventory to it + (dm: &quot;Quote: Good DNR&quot;, $goodSnippetPoints))
 ]
-(set: $Office1CityCalled to true)
-//+Inventory piece//
-{(if: $officetime1 is &quot;2 hours&quot;)[(set: $officetime1 to &quot;1 hour 30 minutes&quot;)]
-(elseif: $officetime1 is &quot;1 hour 30 minutes&quot;)[(set: $officetime1 to &quot;1 hour&quot;)]
-(elseif: $officetime1 is &quot;1 hour&quot;)[(set: $officetime1 to &quot;30 minutes&quot;)]
-(elseif: $officetime1 is &quot;30 minutes&quot;)[ [[Time&#39;s up, submit your story!]] 
-(hide: ?ReturnToDesk)]}
-[ [[Return to your desk-&gt;Arrive at work]] ]&lt;ReturnToDesk|</tw-passagedata><tw-passagedata pid="31" name="Check Squawker to see what people are talking about (30 minutes)" tags="" position="1000,675" size="100,100">People are posting videos of flooded streets downtown. 
-(set: $Office1SocialChecked to true)
-“Got stranded on Johnson Street! Stay away from downtown!” user123 posts.
+(else:)[The DNR worker is clearly overworked, and gives you a transparently rehearsed statement.
+(set: $StoryInventory to it + (dm: &quot;Quote: Rehearsed DNR&quot;, $badSnippetPoints))]}
 
-Ask permission to use their photo. 
+//$gainedInventory Quote: DNR//
 
-//Gained image//
-{(if: $officetime1 is &quot;2 hours&quot;)[(set: $officetime1 to &quot;1 hour 30 minutes&quot;)]
-(elseif: $officetime1 is &quot;1 hour 30 minutes&quot;)[(set: $officetime1 to &quot;1 hour&quot;)]
-(elseif: $officetime1 is &quot;1 hour&quot;)[(set: $officetime1 to &quot;30 minutes&quot;)]
-(elseif: $officetime1 is &quot;30 minutes&quot;)[ [[Time&#39;s up, submit your story!]] 
-(hide: ?ReturnToDesk)]}
-[ [[Return to your desk-&gt;Arrive at work]] ]&lt;ReturnToDesk|</tw-passagedata><tw-passagedata pid="32" name="Answer the phone." tags="" position="875,800" size="100,100">(t8n:&quot;slideright&quot;)[&quot;Hello?&quot;]
+{(if: $DNRnumber and $egghead &gt;1)[You suddenly remember your coworker&#39;s DNR contact, and call them too. They&#39;re very friendly, and send you some valuable data. You push your thick glasses up your nose and expertly decode the cryptic data.
+
+//$gainedInventory Graph: Fact: DNR data
+(set: $StoryInventory to it + (dm: &quot;Fact: DNR data&quot;, $greatSnippetPoints))]
+(elseif:$DNRnumber and $egghead &lt;2)[You suddenly remember your coworker&#39;s DNR contact, and call them too. They&#39;re very friendly, and send you some valuable-looking data. Unfortunately, you can&#39;t make heads or tails of this nonsense.]}
+
+(display: &quot;Office 1 - Clock&quot;)</tw-passagedata><tw-passagedata pid="29" name="Office 1 - Police" tags="" position="1000,350" size="100,100">The police spokesperson tells you that people need to stay off the roads at all costs.
+
+(if:$trust is &gt;1 or $social is &gt;1)[He also tells you about a crash that has occured and gives you quite the quotable story about someone getting stuck in the flood.
+//$gainedInventory Quote: Police story//
+(set: $StoryInventory to it + (dm: &quot;Quote: Police story&quot;, $greatSnippetPoints))]
+
+(else:)[The officer seems suspicious of your credentials and tells you gruffly, &quot;just check the city map, it&#39;s all in there.&quot;
+//$gainedInventory Fact: Police are overwhelmed//
+(set: $StoryInventory to it + (dm: &quot;Fact: Police are overwhelmed&quot;, $badSnippetPoints))]
+
+(display: &quot;Office 1 - Clock&quot;)</tw-passagedata><tw-passagedata pid="30" name="Office 1 - City Hall" tags="" position="1000,225" size="100,100">You ring up your usual City Hall contact.
+
+(if: $social is &gt;1)[You brought coffee and donuts to her last time - she gives you a frank and helpful quote about the state of things at the local government.
+
+
+//$gainedInventory Quote: City hall//
+(set: $StoryInventory to it + (dm: &quot;Quote: City hall&quot;, $goodSnippetPoints))
+]
+
+(display: &quot;Office 1 - Clock&quot;)</tw-passagedata><tw-passagedata pid="31" name="Office 1 - Social Media" tags="" position="1000,675" size="100,100">People are posting videos of flooded streets downtown. 
+
+“Got stranded on Johnson Street! Stay away from downtown!” CherryCharlie88 captions an especially evocative snapshot.
+
+You message CherryCharlie88, telling them you&#39;re a journalist and you&#39;d like to use their image.
+
+(if: $trust is &gt;1)[(text-colour:grey)[&quot;Oh yeah, I think I&#39;ve seen your name in the paper! Go right ahead!&quot;]
+//$gainedInventory Photo: Online picture//
+(set: $StoryInventory to it + (dm: &quot;Photo: Online picture&quot;, $goodSnippetPoints))]
+(else:)[(text-colour:grey)[&quot;Yeah right, and next you&#39;ll tell me you&#39;re a Nigerian prince.&quot;]
+Sigh. This could take some convincing. 
+
+(link-replace: &quot;Keep pushing.&quot;)[
+	(if: $social is &gt;1)[You turn on the charm and start joking and reminiscing with CherryCharlie88 about e-mail scams. They seem to warm up and eventually offer their picture.
+//$gainedInventory Photo: Online picture//
+(set: $StoryInventory to it + (dm: &quot;Photo: Online picture&quot;, $goodSnippetPoints))]
+	(else:)[You keep trying to get the picture but CherryCharlie88 recognizes your frustration and effortlessly taunts you. It feels to you more like cyberbullying. This whole interaction leaves you exhausted.
+//-1 $enduranceName//
+(set: $endurance to it + -1)]]]
+
+(display: &quot;Office 1 - Clock&quot;)</tw-passagedata><tw-passagedata pid="32" name="Answer the phone." tags="" position="875,800" size="100,100">(t8n:&quot;slideright&quot;)[&quot;Hello?&quot;]
 (t8n:&quot;slideleft&quot;)+(t8n-delay:1s)[&quot;Hey!! This is Fred Finkler, you might remember me from the city council meetings.&quot;]
 (t8n:&quot;fade&quot;)+(t8n-delay:3s)[=
 Oh gosh. You remember Fred Finkler alright. This guy is singlehandedly responsible for at least fourteen town hall sessions going over-time.
@@ -188,9 +205,20 @@ Oh gosh. You remember Fred Finkler alright. This guy is singlehandedly responsib
 (hide: ?hangup)
  He tells you all his storm woes (at length) -- his zinnias are being flooded and his cat is getting cranky being stuck indoors and the roof of his car is leaking. You don&#39;t really get any information for the story, but it was a nice chat. 
 
-//+1 Trust//
-//+1 Social Butterfly//
-(set: $trust to it + 1, $social to it + 1)</tw-passagedata><tw-passagedata pid="33" name="Time&#39;s up, submit your story!" tags="" position="1150,450" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+//+1 $trustName//
+//+1 $socialName//
+(set: $trust to it + 1, $social to it + 1)
+[ [[Return to your desk-&gt;Arrive at work]] ]&lt;ReturnToDesk|</tw-passagedata><tw-passagedata pid="33" name="Time&#39;s up, submit your story!" tags="" position="1250,450" size="100,100">It&#39;s been a hectic morning, but you think you might be able to piece together a halfway decent story out of this melange.
+
+(display: &quot;STORY EVALUATION&quot;)</tw-passagedata><tw-passagedata pid="34" name="Office 1 - Clock" tags="" position="1125,450" size="100,100">(unless: $officetime1 is &quot;30 minutes&quot;)[ [[Return to your desk-&gt;Arrive at work]] ]&lt;ReturnToDesk|
+{(if: $officetime1 is &quot;30 minutes&quot;)[
+	[[Time&#39;s up, submit your story!]]]
+(elseif: $officetime1 is &quot;1 hour 30 minutes&quot;)[
+	(set: $officetime1 to &quot;1 hour&quot;)]
+(elseif: $officetime1 is &quot;1 hour&quot;)[
+	(set: $officetime1 to &quot;30 minutes&quot;)]
+(elseif: $officetime1 is &quot;2 hours&quot;)[
+	(set: $officetime1 to &quot;1 hour 30 minutes&quot;)]}</tw-passagedata><tw-passagedata pid="35" name="STORY EVALUATION" tags="" position="1250,650" size="100,100">(text-colour:#51cf66)[(print: $StoryInventory)]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";var _slicedToArray=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,a=!1,i=void 0;try{for(var o,s=e[Symbol.iterator]();!(r=(o=s.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){a=!0,i=e}finally{try{!r&&s.return&&s.return()}finally{if(a)throw i}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}!function(){
 /**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
