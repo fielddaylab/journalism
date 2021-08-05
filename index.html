@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Journalism Table Prototype.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Journalism Table Prototype" startnode="53" creator="Twine" creator-version="2.3.14" ifid="38D0254F-1201-4A17-B70E-05F05EBF9D17" zoom="0.6" format="Harlowe" format-version="3.2.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-story {
+<tw-storydata name="Journalism Table Prototype" startnode="52" creator="Twine" creator-version="2.3.14" ifid="38D0254F-1201-4A17-B70E-05F05EBF9D17" zoom="0.6" format="Harlowe" format-version="3.2.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-story {
 	background-color: white;
   color: black;
 
@@ -218,7 +218,7 @@ $increment[$socialName]
 (elseif: $officetime1 is &quot;1 hour&quot;)[
 	(set: $officetime1 to &quot;30 minutes&quot;)]
 (elseif: $officetime1 is &quot;2 hours&quot;)[
-	(set: $officetime1 to &quot;1 hour 30 minutes&quot;)]}</tw-passagedata><tw-passagedata pid="28" name="STORY EVALUATION" tags="" position="1750,1225" size="100,100">(set: $includedSnippets to (a:))
+	(set: $officetime1 to &quot;1 hour 30 minutes&quot;)]}</tw-passagedata><tw-passagedata pid="28" name="STORY EVALUATION" tags="" position="1575,696.6666666666666" size="100,100">(set: $includedSnippets to (a:))
 =|= 
 Snippet 
 =|| 
@@ -248,7 +248,7 @@ Include
 	(change: ?Warning, (text-colour:white))]
 ]}
 [&#39;&#39;Select 1 to $snippetLimit snippets to include from your inventory&#39;&#39;]&lt;Warning|
-[ [[Submit story - Passage]] ]&lt;Submit|</tw-passagedata><tw-passagedata pid="29" name="Abandoned Cherrymobile" tags="Photo Great" position="938,1173" size="100,100">&lt;img src=&quot;https://journalism-game-master.netlify.app/assets/enml-stuckcar.jpg&quot; title=&quot;Car stuck in the water&quot; width=&quot;400&quot;/&gt;</tw-passagedata><tw-passagedata pid="30" name="Hospital ducks" tags="Photo Good" position="700,1175" size="100,100">Insert a photo of ducks swimming in the hospital parking lot. </tw-passagedata><tw-passagedata pid="31" name="Submit story - Passage" tags="" position="1875,1225" size="100,100">{(set: $score to 0)
+[ [[Submit story]] ]&lt;Submit|</tw-passagedata><tw-passagedata pid="29" name="Abandoned Cherrymobile" tags="Photo Great" position="938,1173" size="100,100">&lt;img src=&quot;https://journalism-game-master.netlify.app/assets/enml-stuckcar.jpg&quot; title=&quot;Car stuck in the water&quot; width=&quot;400&quot;/&gt;</tw-passagedata><tw-passagedata pid="30" name="Hospital ducks" tags="Photo Good" position="700,1175" size="100,100">Insert a photo of ducks swimming in the hospital parking lot. </tw-passagedata><tw-passagedata pid="31" name="Submit story" tags="" position="1696.6666666666667,696.6666666666666" size="100,100">{(set: $score to 0)
 (set: $ticker to 0)
 (set: $speed to 1)
 }
@@ -279,10 +279,10 @@ Include
 	]}
 ]
 (set: $StoryInventory to (dm:))
-[[Return]]
+[[Story 2 Intro]]
 ]
 
-(change:&quot;Judge Story&quot;,(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XX=&quot;,2))</tw-passagedata><tw-passagedata pid="32" name="Judge Snippet" tags="" position="1875,1350" size="100,100">{
+(change:&quot;Judge Story&quot;,(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XX=&quot;,2))</tw-passagedata><tw-passagedata pid="32" name="Judge Snippet" tags="" position="1700,821.6666666666666" size="100,100">{
 
 (if: (passage: $JudgedSnippet)&#39;s tags contains &quot;Bad&quot;)[(set:$score to it+10)]
 (elseif: (passage: $JudgedSnippet)&#39;s tags contains &quot;Good&quot;)[(set:$score to it+15)]
@@ -290,17 +290,17 @@ Include
 (else:)[(print: &quot;Error: no quality tag. It might be written as (passage: $JudgedSnippet)&#39;s tags&#39;s 2nd&quot;)]
 
 (if: (passage: $JudgedSnippet)&#39;s tags contains &quot;Photo&quot;)[
-	(set: $score to it + $photoMod]
+	(set: $score to it + $photoMod)]
 (if: (passage: $JudgedSnippet)&#39;s tags contains &quot;Graph&quot;)[
-	(set: $score to it + $graphMod]
+	(set: $score to it + $graphMod)]
 (if: (passage: $JudgedSnippet)&#39;s tags contains &quot;Quote&quot;)[
-	(set: $score to it + $quoteMod]
+	(set: $score to it + $quoteMod)]
 (if: (passage: $JudgedSnippet)&#39;s tags contains &quot;Fact&quot;)[
-	(set: $score to it + $factMod]
+	(set: $score to it + $factMod)]
 (if: (passage: $JudgedSnippet)&#39;s tags contains &quot;Observation&quot;)[
-	(set: $score to it + $observationMod]
+	(set: $score to it + $observationMod)]
 
-(set: $JudgedSnippet to 0)}</tw-passagedata><tw-passagedata pid="33" name="Rude shopkeeper" tags="Quote Bad" position="950,1400" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="34" name="Story type multiplier" tags="" position="1750,1350" size="100,100">(if: $storyType is &quot;BREAKING NEWS&quot;)[
+(set: $JudgedSnippet to 0)}</tw-passagedata><tw-passagedata pid="33" name="Rude shopkeeper" tags="Quote Bad" position="950,1400" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="34" name="Story type multiplier" tags="" position="1575,821.6666666666666" size="100,100">(if: $storyType is &quot;BREAKING NEWS&quot;)[
 	(set: $photoMod to 0, 
 	$graphMod to 0, 
 	$quoteMod to 5, 
@@ -333,13 +333,13 @@ Include
 ](else:)[
 (text-colour:red)[ERROR: Could not perform type evaluation, story type unknown! Check the &quot;Story type multiplier&quot; passage to see valid types.]
 ]</tw-passagedata><tw-passagedata pid="35" name="Friendly shopkeeper" tags="Quote Good" position="1050,1400" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="36" name="Good DNR" tags="Quote Good" position="1300,1550" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="37" name="Rehearsed DNR" tags="Quote Bad" position="1400,1550" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="38" name="Police safety quote" tags="Good Quote" position="1400,1425" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="39" name="Flood map" tags="Graph Good" position="1300,1175" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="40" name="Police story" tags="Great Quote" position="1300,1425" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="41" name="DNR data" tags="Fact Great" position="1525,1550" size="100,100">incomplete
-</tw-passagedata><tw-passagedata pid="42" name="Graphs" tags="Graph" position="400,1300" size="100,100"></tw-passagedata><tw-passagedata pid="43" name="Observations" tags="Observation" position="400,1675" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="44" name="Quotes" tags="Quote" position="400,1425" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="45" name="Photos" tags="Photo" position="400,1175" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="46" name="Fact" tags="Fact" position="400,1550" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="47" name="Difficult commute" tags="Observation Bad" position="1175,1175" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="48" name="Scientist quotes" tags="Fact Quote Great" position="1300,1800" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="49" name="City hall shock" tags="Quote Great" position="1300,1300" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="50" name="City Hall annoyance" tags="Observation Bad" position="1400,1300" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="51" name="Library lot" tags="Photo Great" position="1300,1675" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="52" name="Return" tags="" position="2000,1225" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="53" name="START" tags="" position="300,300" size="100,100">(t8n-time:1s)+(link:&quot;Wake up&quot;)+(t8n:&quot;fade&quot;)[
+</tw-passagedata><tw-passagedata pid="42" name="Graphs" tags="Graph" position="400,1300" size="100,100"></tw-passagedata><tw-passagedata pid="43" name="Observations" tags="Observation" position="400,1675" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="44" name="Quotes" tags="Quote" position="400,1425" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="45" name="Photos" tags="Photo" position="400,1175" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="46" name="Fact" tags="Fact" position="400,1550" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="47" name="Difficult commute" tags="Observation Bad" position="1175,1175" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="48" name="Scientist quotes" tags="Fact Quote Great" position="1300,1800" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="49" name="City Hall shock" tags="Quote Great" position="1281.6666666666667,1300" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="50" name="City Hall annoyance" tags="Observation Bad" position="1400,1300" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="51" name="Library lot" tags="Photo Great" position="1300,1675" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="52" name="START" tags="" position="300,300" size="100,100">(t8n-time:1s)+(link:&quot;Wake up&quot;)+(t8n:&quot;fade&quot;)[
 
 It&#39;s 5AM.
 
 Dark, rainy, and way too early. 
 &lt;img src=&quot;https://journalism-game-master.netlify.app/assets/enml-rain.gif&quot; title=&quot;Buzzing phone&quot; width=&quot;400&quot;/&gt;
-[[Check your phone.]]]</tw-passagedata><tw-passagedata pid="54" name="Message Nurse" tags="" position="701,176" size="100,100">(Insert photo of hospital parking lot)
+[[Check your phone.]]]</tw-passagedata><tw-passagedata pid="53" name="Message Nurse" tags="" position="701,176" size="100,100">(Insert photo of hospital parking lot)
 This photo would be perfect for your story!
 
 (link:&quot;Send message&quot;)[=The nurse is happy to let you use his photo. He even has some headline ideas:
@@ -350,7 +350,7 @@ This photo would be perfect for your story!
 
 (link:&quot;\&quot;Thanks. I&#39;ll keep those in mind.\&quot; &quot;)[={(set: $StoryInventory to it + (dm: &quot;Hospital ducks&quot;, false))
 $gainedInventory[Photo: Hospital ducks]}
-[[Off to work]]</tw-passagedata><tw-passagedata pid="55" name="Read flooding article." tags="Egghead" position="698,298" size="100,100">(Insert article photo here)
+[[Off to work]]</tw-passagedata><tw-passagedata pid="54" name="Read flooding article." tags="Egghead" position="698,298" size="100,100">(Insert article photo here)
 
 You learn all about flood safety:
 
@@ -362,7 +362,7 @@ Don&#39;t panic if you encounter snakes--there are only a few venomous ones arou
 
 $increment[$eggheadName]
 (set: $egghead to it + 1)
-[[Off to work]]]</tw-passagedata><tw-passagedata pid="56" name="Check on your upstairs neighbor" tags="Social Trust" position="700,900" size="100,100">The old lady upstairs is delighted to see you. 
+[[Off to work]]]</tw-passagedata><tw-passagedata pid="55" name="Check on your upstairs neighbor" tags="Social Trust" position="700,900" size="100,100">The old lady upstairs is delighted to see you. 
 
 She gives you some tea and has you try on the sweater she&#39;s been knitting you.
 
@@ -372,12 +372,12 @@ $increment[$trustName]
 $increment[$socialName]
 (set: $trust to it +1)
 (set: $social to it + 1)
-[[Off to work]]</tw-passagedata><tw-passagedata pid="57" name="Check your phone." tags="" position="300,425" size="100,100">5 missed calls from your editor.
+[[Off to work]]</tw-passagedata><tw-passagedata pid="56" name="Check your phone." tags="" position="300,425" size="100,100">5 missed calls from your editor.
 
 Probably checking up on your puff piece about the cherry festival.
 
 &lt;img src=&quot;https://journalism-game-master.netlify.app/assets/enml-buzzingphone.gif&quot; title=&quot;Buzzing phone&quot; width=&quot;400&quot;/&gt;
-[[Call back.-&gt;Call your editor.]]</tw-passagedata><tw-passagedata pid="58" name="Call your editor." tags="" position="300,550" size="100,100">(text-colour:grey)[&quot;(text-style:&quot;rumble&quot;)[FINALLY!] Where have you been??&quot;]
+[[Call back.-&gt;Call your editor.]]</tw-passagedata><tw-passagedata pid="57" name="Call your editor." tags="" position="300,550" size="100,100">(text-colour:grey)[&quot;(text-style:&quot;rumble&quot;)[FINALLY!] Where have you been??&quot;]
 
 Before you can tell her where you&#39;ve been (sleeping, because it&#39;s //FIVE// in the //MORNING//), she gives you the lowdown:
 
@@ -385,12 +385,12 @@ Before you can tell her where you&#39;ve been (sleeping, because it&#39;s //FIVE
 
 You need to get to the newsroom and put out a breaking news update, ASAP.]
 
-[[&quot;On my way.&quot;-&gt;&quot;On my way.&quot;]]</tw-passagedata><tw-passagedata pid="59" name="Rush to work" tags="" position="825,325" size="100,200">You make up an excuse and hurry to your car.
+[[&quot;On my way.&quot;-&gt;&quot;On my way.&quot;]]</tw-passagedata><tw-passagedata pid="58" name="Rush to work" tags="" position="825,325" size="100,200">You make up an excuse and hurry to your car.
 
 Your neighbor can get her own coop in a group!
 
 [[Load your bike, that could be useful later.]]
-[[I&#39;m in a hurry, there&#39;s no need to bring the bike!]]</tw-passagedata><tw-passagedata pid="60" name="Chase chickens" tags="Trust Endurance" position="950,775" size="100,100">You help round up the chickens and only get pecked twice.
+[[I&#39;m in a hurry, there&#39;s no need to bring the bike!]]</tw-passagedata><tw-passagedata pid="59" name="Chase chickens" tags="Trust Endurance" position="950,775" size="100,100">You help round up the chickens and only get pecked twice.
 
 &quot;Oh, thank you!” your neighbor cries. 
 
@@ -399,7 +399,7 @@ You tell her it&#39;s no big deal, you were (mostly) happy to help.
 $increment[$trustName]
 $increment[$enduranceName]
 (set: $trust to it + 1, $endurance to it +1)
-[[Hit the road-&gt;Hit the road]]</tw-passagedata><tw-passagedata pid="61" name="Lure chickens" tags="Trust Resourceful" position="950,900" size="100,100">You make a trail of cherry granola and the chickens come running!
+[[Hit the road-&gt;Hit the road]]</tw-passagedata><tw-passagedata pid="60" name="Lure chickens" tags="Trust Resourceful" position="950,900" size="100,100">You make a trail of cherry granola and the chickens come running!
 
 The good news: the chickens are safe now.
 
@@ -408,13 +408,13 @@ The bad news: they follow you to your car, clucking for more treats.
 $increment[$trustName]
 $increment[$resourcefulName]
 (set: $social to it + 1, $resourceful to it +1)
-[[Hit the road]] </tw-passagedata><tw-passagedata pid="62" name="Hit the road" tags="" position="950,650" size="100,100">You notice the town&#39;s famous Cherrymobile abandoned in high water.
+[[Hit the road]] </tw-passagedata><tw-passagedata pid="61" name="Hit the road" tags="" position="950,650" size="100,100">You notice the town&#39;s famous Cherrymobile abandoned in high water.
 
 Birds are pecking at pastries that have drifted out of a local bakery. 
 
 You wish you could snag some photos, but your boss is texting you. No time to stop.
 &lt;img src=&quot;https://journalism-game-master.netlify.app/assets/enml-textmessage.jpg&quot; title=&quot;Your boss&#39;s angry text&quot; width=&quot;400&quot;/&gt;
-[[Arrive at work.&lt;-Rush to work]] </tw-passagedata><tw-passagedata pid="63" name="I&#39;m in a hurry, there&#39;s no need to bring the bike!" tags="" position="948,200" size="100,200">Your usual route is covered with water.
+[[Arrive at work.&lt;-Rush to work]] </tw-passagedata><tw-passagedata pid="62" name="I&#39;m in a hurry, there&#39;s no need to bring the bike!" tags="" position="948,200" size="100,200">Your usual route is covered with water.
 
 (link:&quot;Stop to look around.&quot;)[=A baker is piling up burlap sacks in front of her shop.
 
@@ -422,7 +422,7 @@ Cars are abandoned --including the famous Twin Lakes Cherrymobile!
 &lt;img src=&quot;https://journalism-game-master.netlify.app/assets/enml-stuckcar.jpg&quot; title=&quot;Car stuck in the water&quot; width=&quot;400&quot;/&gt;
 
 [[Help the baker-&gt;Help the baker]]
-[[Take some photos-&gt;Take some photos]]</tw-passagedata><tw-passagedata pid="64" name="Arrive at work." tags="" position="1067,551" size="100,100">In the mostly-empty newsroom, the lights are flickering and rainwater drips from the ceiling. 
+[[Take some photos-&gt;Take some photos]]</tw-passagedata><tw-passagedata pid="63" name="Arrive at work." tags="" position="1067,551" size="100,100">In the mostly-empty newsroom, the lights are flickering and rainwater drips from the ceiling. 
 
 Your editor looks relieved to see you.
 
@@ -435,7 +435,7 @@ $gainedInventory[Observation: Difficult commute]}
 
 (link:&quot;\&quot;How can I help?\&quot;&quot;)[&quot;We need a breaking news story. You&#39;ve got 2 hours.&quot;
 
-[[&quot;On it.&quot;-&gt;Breaking News Story]]]](set: $officetime1 to &quot;2 hours&quot;,$DNRnumber to false)</tw-passagedata><tw-passagedata pid="65" name="Help the baker" tags="" position="1073,301" size="100,100">(if: $endurance is &gt;1)[You rush over, emboldened by your cherry breakfast full of healthy antioxidants.
+[[&quot;On it.&quot;-&gt;Breaking News Story]]]](set: $officetime1 to &quot;2 hours&quot;,$DNRnumber to false)</tw-passagedata><tw-passagedata pid="64" name="Help the baker" tags="" position="1073,301" size="100,100">(if: $endurance is &gt;1)[You rush over, emboldened by your cherry breakfast full of healthy antioxidants.
 
 The baker is stacking up bags of flour. 
 
@@ -464,7 +464,7 @@ You suppose you could quote this, if you remove the profanity...
 {(set: $StoryInventory to it + (dm: &quot;Rude shopkeeper&quot;, false))
 $gainedInventory[Quote: Rude shopkeeper]}]
 
-[[Arrive at work.]]</tw-passagedata><tw-passagedata pid="66" name="Take some photos" tags="" position="1075,176" size="100,100">(if: $techie is &gt;1)[You climb up on your car for a better view.
+[[Arrive at work.]]</tw-passagedata><tw-passagedata pid="65" name="Take some photos" tags="" position="1075,176" size="100,100">(if: $techie is &gt;1)[You climb up on your car for a better view.
 
 With your zoom lens, you get an awesome photo:
 
@@ -481,7 +481,7 @@ Hopefully blurry cars in blurry water will be good enough for your editor.
 {(set: $StoryInventory to it + (dm: &quot;Blurry cars&quot;, false))
 $gainedInventory[Photo: Blurry cars]}]
 
-[[Arrive at work.]]</tw-passagedata><tw-passagedata pid="67" name="Breaking News Story" tags="" position="1200,550" size="100,100">Get to work on your breaking news story!
+[[Arrive at work.]]</tw-passagedata><tw-passagedata pid="66" name="Breaking News Story" tags="" position="1200,550" size="100,100">Get to work on your breaking news story!
 
 You have (text-style:&quot;buoy&quot;)+(text-color:navy)[&#39;&#39;$officetime1&#39;&#39;] remaining.
 
@@ -493,7 +493,7 @@ You have (text-style:&quot;buoy&quot;)+(text-color:navy)[&#39;&#39;$officetime1&
 (unless:(history: where its name contains &quot;Office 1 - DNR&quot;)&#39;s length &gt;= 1)[ [[Call the Department of Natural Resources (30 minutes)-&gt;Office 1 - DNR]] 					]
 (unless:(history: where its name contains &quot;Office 1 - Police&quot;)&#39;s length &gt;= 1)[ [[Call your police contact (30 minutes)-&gt;Office 1 - Police]] 	]
 (unless:(history: where its name contains &quot;Office 1 - City Hall&quot;)&#39;s length &gt;= 1)[ [[Call your City Hall contact (30 minutes)-&gt;Office 1 - City Hall]] 	]
-(unless:(history: where its name contains &quot;Office 1 - Social Media&quot;)&#39;s length &gt;= 1)[ [[Check Squawker (15 minutes)-&gt;Office 1 - Social Media]] ]</tw-passagedata><tw-passagedata pid="68" name="Blurry cars" tags="Photo Bad" position="1050,1175" size="100,100">&lt;img src=&quot;https://journalism-game-master.netlify.app/assets/enml-stuckcar.jpg&quot; title=&quot;Car stuck in the water&quot; width=&quot;400&quot;/&gt;</tw-passagedata><tw-passagedata pid="69" name="Jenkins&#39;s Computer" tags="" position="1450,900" size="100,100">&lt;img src=&quot;https://journalism-game-master.netlify.app/assets/enml-oldcomputer.jpg&quot; title=&quot;Old computer&quot; width=&quot;400&quot;/&gt;
+(unless:(history: where its name contains &quot;Office 1 - Social Media&quot;)&#39;s length &gt;= 1)[ [[Check Squawker (15 minutes)-&gt;Office 1 - Social Media]] ]</tw-passagedata><tw-passagedata pid="67" name="Blurry cars" tags="Photo Bad" position="1050,1175" size="100,100">&lt;img src=&quot;https://journalism-game-master.netlify.app/assets/enml-stuckcar.jpg&quot; title=&quot;Car stuck in the water&quot; width=&quot;400&quot;/&gt;</tw-passagedata><tw-passagedata pid="68" name="Jenkins&#39;s Computer" tags="" position="1450,900" size="100,100">&lt;img src=&quot;https://journalism-game-master.netlify.app/assets/enml-oldcomputer.jpg&quot; title=&quot;Old computer&quot; width=&quot;400&quot;/&gt;
 (if: $techie &gt; 1)[You take a few guesses at his password. 
 
 PASSWORD doesn&#39;t work, but PASSWORD123 is a match!
@@ -506,7 +506,7 @@ $gainedInventory[Quote/Data: Scientist quotes]
 
 You do find a sticky note on his file cabinet: //Contact Wynne D. Storme, expert @ DNR// ]
 (set: $DNRNumber to true)
-(display: &quot;Office 1 - Clock&quot;)</tw-passagedata><tw-passagedata pid="70" name="Online picture" tags="Photo Good" position="1400,1675" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="71" name="Grainy picture" tags="Photo Bad" position="1500,1675" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="72" name="Weather stats" tags="Good Fact" position="1400,1175" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="73" name="Flood background" tags="Good Fact" position="1525,1425" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="74" name="STARTUP VALUES" tags="startup" position="125,300" size="100,100">{
+(display: &quot;Office 1 - Clock&quot;)</tw-passagedata><tw-passagedata pid="69" name="Online picture" tags="Photo Good" position="1400,1675" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="70" name="Grainy picture" tags="Photo Bad" position="1500,1675" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="71" name="Weather stats" tags="Good Fact" position="1400,1175" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="72" name="Flood background" tags="Good Fact" position="1525,1425" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="73" name="STARTUP VALUES" tags="startup" position="125,300" size="100,100">{
 (set: $egghead to 1, $resourceful to 1, $endurance to 1, $techie to 1, $social to 1, $trust to 1)
 
 (set: $StoryInventory to (dm:))
@@ -522,7 +522,7 @@ $trustName to &quot;Trust&quot;)
 (set: $badSnippetPoints to 10,
 $goodSnippetPoints to 15,
 $greatSnippetPoints to 20)
-}</tw-passagedata><tw-passagedata pid="75" name="STATS HEADER" tags="header" position="125,425" size="100,100">(float-box: &quot;X========&quot;, &quot;Y&quot;)+(css: &quot;background-color:dimgrey&quot;)+(text-color:white)[&#39;&#39;Stats: &#39;&#39;(text-size:0.8)[=(live: 10)[
+}</tw-passagedata><tw-passagedata pid="74" name="STATS HEADER" tags="header" position="125,425" size="100,100">(float-box: &quot;X========&quot;, &quot;Y&quot;)+(css: &quot;background-color:dimgrey&quot;)+(text-color:white)[&#39;&#39;Stats: &#39;&#39;(text-size:0.8)[=(live: 10)[
 ---
 &#39;&#39;$eggheadName: $egghead&#39;&#39;
 |desc)[Your knowledge and nerdiness.]
@@ -544,14 +544,14 @@ $greatSnippetPoints to 20)
 (change: ?desc, (text-size:0.5)+(text-style:&quot;italic&quot;))
 (if: $showStatDescriptions is &quot;hide descriptions&quot;)[(show: ?desc)]]]
 
-(float-box: &quot;X========&quot;, &quot;=========Y&quot;)+(css: &quot;background-color:dimgrey&quot;)+(text-color:white)+(text-size:0.8)[(cycling-link: 2bind $showStatDescriptions, &quot;show descriptions&quot;, &quot;hide descriptions&quot;)]</tw-passagedata><tw-passagedata pid="76" name="SNIPPET SIDEBAR" tags="header" position="125,550" size="100,100">(float-box: &quot;=======X&quot;, &quot;Y&quot;)+(css: &quot;background-color:dimgrey&quot;)+(text-color:white)[&#39;&#39;Story Snippets: &#39;&#39;(text-size:0.8)[=
+(float-box: &quot;X========&quot;, &quot;=========Y&quot;)+(css: &quot;background-color:dimgrey&quot;)+(text-color:white)+(text-size:0.8)[(cycling-link: 2bind $showStatDescriptions, &quot;show descriptions&quot;, &quot;hide descriptions&quot;)]</tw-passagedata><tw-passagedata pid="75" name="SNIPPET SIDEBAR" tags="header" position="125,550" size="100,100">(float-box: &quot;=======X&quot;, &quot;Y&quot;)+(css: &quot;background-color:dimgrey&quot;)+(text-color:white)[&#39;&#39;Story Snippets: &#39;&#39;(text-size:0.8)[=
 ---
 (for: each _snippet, ...(datanames:$StoryInventory))[
-(background:grey)[(text-colour:lime)[(print: (passage:_snippet)&#39;s tags&#39;s 1st): ](print: _snippet)]]]</tw-passagedata><tw-passagedata pid="77" name="Story 2 Intro" tags="" position="1950,550" size="100,100">Your next assignment: get to the flood site and report on what&#39;s happening. 
+(background:grey)[(text-colour:lime)[(print: (passage:_snippet)&#39;s tags&#39;s 1st): ](print: _snippet)]]]</tw-passagedata><tw-passagedata pid="76" name="Story 2 Intro" tags="" position="1950,550" size="100,100">Your next assignment: get to the flood site and report on what&#39;s happening. 
 
 &quot;We need to get ahead of this story,&quot; your editor says. &quot;Do you think you can handle it?&quot;
 
-[[&quot;Don&#39;t worry. I got this.&quot;-&gt;Get Ready]]</tw-passagedata><tw-passagedata pid="78" name="Get Ready" tags="" position="2090,560" size="100,100">(if:$techie is &lt; 2 and $resourceful is &lt;2)[First things first. You need more tech and rain gear, or you&#39;ll be dead in the water.
+[[&quot;Don&#39;t worry. I got this.&quot;-&gt;Get Ready]]</tw-passagedata><tw-passagedata pid="77" name="Get Ready" tags="" position="2090,560" size="100,100">(if:$techie is &lt; 2 and $resourceful is &lt;2)[First things first. You need more tech and rain gear, or you&#39;ll be dead in the water.
 
 (unless:(history: where its name contains &quot;Ask to borrow gear&quot;)&#39;s length &gt;= 1)[[Ask to borrow rain gear-&gt;Borrow gear]]
 (unless:(history: where its name contains &quot;Ask to borrow tech&quot;)&#39;s length &gt;= 1)[[Ask to borrow tech-&gt;Borrow tech]]
@@ -573,7 +573,7 @@ $greatSnippetPoints to 20)
 
 (elseif: $techie is &gt;=2)+(elseif: $resourceful is &gt;=2)[You&#39;ve got all the tech and gear you need! 
 
-[[Prepare to brave the storm-&gt;Get Ready part 2]]]</tw-passagedata><tw-passagedata pid="79" name="Borrow gear" tags="Resourceful" position="2125,304" size="100,100">(if:(history: where its name contains &quot;Borrow tech&quot;)&#39;s length is 1)[Your coworkers aren&#39;t thrilled to have to lend you stuff. Again. 
+[[Prepare to brave the storm-&gt;Get Ready part 2]]]</tw-passagedata><tw-passagedata pid="78" name="Borrow gear" tags="Resourceful" position="2125,304" size="100,100">(if:(history: where its name contains &quot;Borrow tech&quot;)&#39;s length is 1)[Your coworkers aren&#39;t thrilled to have to lend you stuff. Again. 
 
 You end up with everything you need, including a light-up jellyfish umbrella! 
 
@@ -593,14 +593,14 @@ You&#39;ll just need to swing by the Lost and Found later for your dignity.
 (set: $social to it - 1)//-1 Social Butterfly//
 (if:$resourceful is &gt;= 2)+(if:$techie is &gt;=2)[[[Back to your desk-&gt;Get Ready part 2]]]
 (if:$techie is &lt; 2)[[[Back to your desk-&gt;Get Ready]]]]
-</tw-passagedata><tw-passagedata pid="80" name="Lost and Found" tags="Resourceful Techie" position="2011,301" size="100,100">
+</tw-passagedata><tw-passagedata pid="79" name="Lost and Found" tags="Resourceful Techie" position="2011,301" size="100,100">
 You dig through old, lost things: a flip phone, an mP3 player, a 2010 Cherry Festival T-shirt. 
 
 Then--score! A phone charger and some rain gear!
 
 //+1 resourceful//
 //+1 techie//(set: $resourceful to it + 1)(set: $techie to it + 1)
-[[Back to your desk-&gt;Get Ready part 2]]</tw-passagedata><tw-passagedata pid="81" name="Borrow tech" tags="Techie" position="2050,675" size="100,100">(if:(history: where its name contains &quot;Borrow gear&quot;)&#39;s length &gt;= 1)[Your coworkers are tired of lending you stuff.
+[[Back to your desk-&gt;Get Ready part 2]]</tw-passagedata><tw-passagedata pid="80" name="Borrow tech" tags="Techie" position="2050,675" size="100,100">(if:(history: where its name contains &quot;Borrow gear&quot;)&#39;s length &gt;= 1)[Your coworkers are tired of lending you stuff.
 
 They give you the tech you need, but you notice that people have started hiding under their desks when you walk toward them. 
 
@@ -615,7 +615,7 @@ Your editor overhears your plight and lets you borrow her tech.
 (set: $techie to it + 2)//+2 tech//
 (set: $trust to it - 1)//-1 trust//]
 (if:$resourceful is &gt;= 2)+(if:$techie is &gt;=2)[[[Back to your desk-&gt;Get Ready part 2]]]
-(if:$resourceful is &lt; 2)[[[Back to your desk-&gt;Get Ready]]]</tw-passagedata><tw-passagedata pid="82" name="Get Ready part 2" tags="" position="2219,565" size="100,100">You&#39;ve got all the gear you need!
+(if:$resourceful is &lt; 2)[[[Back to your desk-&gt;Get Ready]]]</tw-passagedata><tw-passagedata pid="81" name="Get Ready part 2" tags="" position="2219,565" size="100,100">You&#39;ve got all the gear you need!
 
 Your coworkers are rushing around, making phone calls. 
 
@@ -626,7 +626,7 @@ Your coworkers are rushing around, making phone calls.
 (unless:(history: where its name contains &quot;Help Khalisa&quot;)&#39;s length &gt;= 1)[[Help your fellow reporter-&gt;Help Khalisa]]
 (unless:(history: where its name contains &quot;Head out&quot;)&#39;s length &gt;= 1)[[Enough stalling. Time to go.-&gt;Head out]]
 
-[[Eject: Wasted too much time]]</tw-passagedata><tw-passagedata pid="83" name="Drive" tags="" position="2695,561" size="100,100">(if: $bookworm is &gt;= 4)[Thanks to your meticulous planning, you manage to avoid the most dangerous flood zones!
+[[Eject: Wasted too much time]]</tw-passagedata><tw-passagedata pid="82" name="Drive" tags="" position="2695,561" size="100,100">(if: $bookworm is &gt;= 4)[Thanks to your meticulous planning, you manage to avoid the most dangerous flood zones!
 
 Unfortunately, it also takes three times longer than usual to get downtown.
 
@@ -637,25 +637,25 @@ You&#39;re halfway there when water starts rising.
 The road is totally covered! 
 
 [[Find higher ground and pull over ASAP-&gt;Find higher ground]]
-[[Try to drive through-&gt;Floor it]]]</tw-passagedata><tw-passagedata pid="84" name="Listen to the police scanner" tags="Egghead" position="2300,263" size="100,100">According to the scanner, Streusel Street and Drury Lane are totally flooded, but Cronut Drive is still passable.
+[[Try to drive through-&gt;Floor it]]]</tw-passagedata><tw-passagedata pid="83" name="Listen to the police scanner" tags="Egghead" position="2300,263" size="100,100">According to the scanner, Streusel Street and Drury Lane are totally flooded, but Cronut Drive is still passable.
 
 You take some notes and peek at the flood map, just to be safe.
 
 //+2 Bookworm//(set: $egghead to it +2)
-[[Back to your desk-&gt;Get Ready part 2]]</tw-passagedata><tw-passagedata pid="85" name="Head out" tags="" position="2582,560" size="100,100">Forget cats and dogs. It&#39;s raining an entire pet store. 
+[[Back to your desk-&gt;Get Ready part 2]]</tw-passagedata><tw-passagedata pid="84" name="Head out" tags="" position="2582,560" size="100,100">Forget cats and dogs. It&#39;s raining an entire pet store. 
 
 How are you going to get downtown in this mess? 
 
 (if: $hasBike is true)[[Bike]]
 [[Drive]]
-(unless:(history: where its name contains &quot;Track down an expert to help you&quot;)&#39;s length &gt;= 1)[[Track down an expert to help you]]</tw-passagedata><tw-passagedata pid="86" name="Breakroom" tags="" position="2297,401" size="100,100">The storm has hit the break room hard: 
+(unless:(history: where its name contains &quot;Track down an expert to help you&quot;)&#39;s length &gt;= 1)[[Track down an expert to help you]]</tw-passagedata><tw-passagedata pid="85" name="Breakroom" tags="" position="2297,401" size="100,100">The storm has hit the break room hard: 
 
 Fridge emptied due to lost power, rainwater dripping. 
 
 Thankfully, you manage to salvage the coffee beans.
 
 [[Make coffee for the newsroom]]
-[[Search for snacks]]</tw-passagedata><tw-passagedata pid="87" name="Help Khalisa" tags="Endurance Trust" position="2325,912" size="100,100">Khalisa&#39;s car is stuck in a small puddle the size of a large puddle.
+[[Search for snacks]]</tw-passagedata><tw-passagedata pid="86" name="Help Khalisa" tags="Endurance Trust" position="2325,912" size="100,100">Khalisa&#39;s car is stuck in a small puddle the size of a large puddle.
 
 (if: $endurance &gt;= 2)[You muster up all your strength and manage to push her car to dry ground!](else:)[You push with all your strength and move her car about an inch.]
 
@@ -664,7 +664,7 @@ Thankfully, you manage to salvage the coffee beans.
 //+1 endurance//(set: $endurance to it +1)
 //+1 trust//(set: $trust to it + 1) 
 
-[[Back to your desk-&gt;Get Ready part 2]]</tw-passagedata><tw-passagedata pid="88" name="Make coffee for the newsroom" tags="Social Endurance" position="2430,485" size="100,100">You brew some cherry-infused Twin Lakes coffee. 
+[[Back to your desk-&gt;Get Ready part 2]]</tw-passagedata><tw-passagedata pid="87" name="Make coffee for the newsroom" tags="Social Endurance" position="2430,485" size="100,100">You brew some cherry-infused Twin Lakes coffee. 
 
 Soon all your coworkers are gathered around, trading stories.
 
@@ -672,12 +672,12 @@ The coffee tastes like fruit-flavored mud, but at least it&#39;s caffeinated!
 
 //+1 social butterfly//(set: $social to it + 1) 
 //+1 endurance//(set: $endurance to it + 1) 
-[[Back to your desk-&gt;Get Ready part 2]]</tw-passagedata><tw-passagedata pid="89" name="Search for snacks" tags="" position="2430,368" size="100,100">You find some organic, protein-infused cherry yogurt, labeled K. Jones.
+[[Back to your desk-&gt;Get Ready part 2]]</tw-passagedata><tw-passagedata pid="88" name="Search for snacks" tags="" position="2430,368" size="100,100">You find some organic, protein-infused cherry yogurt, labeled K. Jones.
 
 Also, extra saltine crackers stuffed in a drawer.
 
 [[Eat the yogurt for a boost of energy-&gt;Yogurt]]
-[[Grab a few saltine crackers.-&gt;Crackers]]</tw-passagedata><tw-passagedata pid="90" name="Eject: Wasted too much time" tags="" position="2380,639" size="100,100">You&#39;re about to head out into the storm when your editor strolls by.
+[[Grab a few saltine crackers.-&gt;Crackers]]</tw-passagedata><tw-passagedata pid="89" name="Eject: Wasted too much time" tags="" position="2380,639" size="100,100">You&#39;re about to head out into the storm when your editor strolls by.
 
 &quot;Want to put on some coffee?&quot; she asks. &quot;We&#39;re almost out.&quot;
 
@@ -687,13 +687,13 @@ Your boss shakes her head. &quot;Not anymore. I saw you were still sitting aroun
 
 You lost the scoop, rookie. Better luck next time! 
 
-&#39;&#39;GAME OVER&#39;&#39;</tw-passagedata><tw-passagedata pid="91" name="&quot;Borrow&quot; charger" tags="" position="2150,675" size="100,100">One of the copyeditors is away from his desk. 
+&#39;&#39;GAME OVER&#39;&#39;</tw-passagedata><tw-passagedata pid="90" name="&quot;Borrow&quot; charger" tags="" position="2150,675" size="100,100">One of the copyeditors is away from his desk. 
 
 He left his phone charging, right out in the open. 
 
 [[Swipe his charger]]
 [[Unplug his phone and charge yours]]
-[[Forget it. I&#39;ll find another way.-&gt;Get Ready]]</tw-passagedata><tw-passagedata pid="92" name="Swipe his charger" tags="" position="2106,809" size="100,100">You grab his charger and tuck it into your pocket.
+[[Forget it. I&#39;ll find another way.-&gt;Get Ready]]</tw-passagedata><tw-passagedata pid="91" name="Swipe his charger" tags="" position="2106,809" size="100,100">You grab his charger and tuck it into your pocket.
 
 His phone is at 92% battery. It&#39;ll be fine.
 
@@ -702,7 +702,7 @@ At least, you think it will be, until your editor calls you into her office.
 &quot;Look on the bright side,&quot; she says. &quot;You&#39;ll have a fully charged phone for your job hunt!&quot;
 
 Apparently, this is a journalistic way of saying &quot;you&#39;re fired.&quot;
-&#39;&#39;GAME OVER&#39;&#39;</tw-passagedata><tw-passagedata pid="93" name="Unplug his phone and charge yours" tags="Techie" position="2232,811" size="100,100">You can hear the copyeditor in the breakroom, bragging about his new, tricked-out jellyfish umbrella.
+&#39;&#39;GAME OVER&#39;&#39;</tw-passagedata><tw-passagedata pid="92" name="Unplug his phone and charge yours" tags="Techie" position="2232,811" size="100,100">You can hear the copyeditor in the breakroom, bragging about his new, tricked-out jellyfish umbrella.
 
 You unplug his phone, plug in yours, and try to look innocent.
 
@@ -712,7 +712,7 @@ When you hear him coming, you turn tail and run for it. 40% battery should be go
 //-1 trust//(set: $trust to it - 1)
 (if:$resourceful is &gt;= 2)+(if:$techie is &gt;=2)[[[Back to your desk-&gt;Get Ready part 2]]]
 (if:$resourceful is &lt; 2)[[[Back to your desk-&gt;Get Ready]]]
-</tw-passagedata><tw-passagedata pid="94" name="Track down an expert to help you" tags="" position="2701,900" size="100,100">You ask around for an informant to help you get downtown, but everyone is swamped.
+</tw-passagedata><tw-passagedata pid="93" name="Track down an expert to help you" tags="" position="2701,900" size="100,100">You ask around for an informant to help you get downtown, but everyone is swamped.
 
 (if:(history: where its name contains &quot;Help Khalisa&quot;)&#39;s length &lt; 1)[Khalisa might know someone. Too bad she&#39;s still bailing out her flooded car.
 
@@ -724,30 +724,30 @@ She&#39;s busy asking people if they&#39;ve seen her yogurt--now might not be th
 
 &quot;You need help getting downtown, rookie?&quot; she says. &quot;I know a great informant. Retired fire chief. Also happens to be my dad.&quot;
 
-[[Call informant]]]</tw-passagedata><tw-passagedata pid="95" name="Bike" tags="" position="2700,301" size="100,100">Half of the roads are covered in water. Also fish, snakes, and the occasional sandhill crane. 
+[[Call informant]]]</tw-passagedata><tw-passagedata pid="94" name="Bike" tags="" position="2700,301" size="100,100">Half of the roads are covered in water. Also fish, snakes, and the occasional sandhill crane. 
 
 Good thing you can bike around them!
 
 You weave around flooded areas, zoom down the bike path, and make it downtown in record time!
 
 (set: $endurance to it +1)
-[[Arrive at flood site]]</tw-passagedata><tw-passagedata pid="96" name="Call informant" tags="" position="2835,898" size="100,100">Khalisa&#39;s firefighter dad is happy to give you a lift downtown.
+[[Arrive at flood site]]</tw-passagedata><tw-passagedata pid="95" name="Call informant" tags="" position="2835,898" size="100,100">Khalisa&#39;s firefighter dad is happy to give you a lift downtown.
 
 &quot;It&#39;s not safe out there for out-of-towners,&quot; he says. &quot;Wait out front, I&#39;ll come get you! 
 
 [[Wait for a ride-&gt;Wait outside]]
-[[Thanks, but I&#39;ll find my own way-&gt;Head out]]</tw-passagedata><tw-passagedata pid="97" name="Wait outside" tags="" position="2967,896" size="100,100">The former fire chief shows up in a tricked-out flood rescue vehicle. 
+[[Thanks, but I&#39;ll find my own way-&gt;Head out]]</tw-passagedata><tw-passagedata pid="96" name="Wait outside" tags="" position="2967,896" size="100,100">The former fire chief shows up in a tricked-out flood rescue vehicle. 
 
 &quot;Rigged this baby up in my spare time,&quot; he says, and ferries you off into the floodwater. 
 
 [[Take photos on the way]]
-[[Ask for an interview]]</tw-passagedata><tw-passagedata pid="98" name="Find higher ground" tags="" position="2803,681" size="100,100">You swerve off the road and into a parking lot just in time.
+[[Ask for an interview]]</tw-passagedata><tw-passagedata pid="97" name="Find higher ground" tags="" position="2803,681" size="100,100">You swerve off the road and into a parking lot just in time.
 
 The street has become a river. Little fish jumping and everything. 
 
 You try to check the flood map on your phone, but your wifi won&#39;t cooperate. 
 
-[[Look around for something useful]]</tw-passagedata><tw-passagedata pid="99" name="Floor it" tags="" position="2808,478" size="100,100">You floor it and hope for the best. 
+[[Look around for something useful]]</tw-passagedata><tw-passagedata pid="98" name="Floor it" tags="" position="2808,478" size="100,100">You floor it and hope for the best. 
 
 Your car splashes valiantly through the water for a few seconds, then sputters and dies. You’re stranded! 
 
@@ -757,7 +757,7 @@ Minnows and bluegills jump around you.
 
 [[Swim for it]]
 [[Wait for rescue]]
-</tw-passagedata><tw-passagedata pid="100" name="Ask to borrow a kayak" tags="" position="3035,635" size="100,100">(if: $trust is &gt;=3)[The driver is happy to lend you their kayak.
+</tw-passagedata><tw-passagedata pid="99" name="Ask to borrow a kayak" tags="" position="3035,635" size="100,100">(if: $trust is &gt;=3)[The driver is happy to lend you their kayak.
 
 &quot;I read your piece about the possoms living behind the high school,&quot; they tell you. &quot;Really nice work!&quot;
 
@@ -771,7 +771,7 @@ Minnows and bluegills jump around you.
 You end up lending them some of your tech to earn their trust.
 
 //-1 techie//
-(set: $techie to it -1)][[Start paddling]]</tw-passagedata><tw-passagedata pid="101" name="Use deli wifi" tags="" position="3037,753" size="100,100">(if: $social is &gt;=3)[You check the flood map and find a safer route!
+(set: $techie to it -1)][[Start paddling]]</tw-passagedata><tw-passagedata pid="100" name="Use deli wifi" tags="" position="3037,753" size="100,100">(if: $social is &gt;=3)[You check the flood map and find a safer route!
 
 The deli owner is worried about you.
 
@@ -784,14 +784,14 @@ The deli owner gives you the side-eye.
 He tells you to buy something if you want to stick around. This place is for paying customers only. 
 //+1 bookworm//]
 
-[[Arrive at flood site]]</tw-passagedata><tw-passagedata pid="102" name="Start paddling" tags="" position="3170,568" size="100,100">You paddle out into the street. 
+[[Arrive at flood site]]</tw-passagedata><tw-passagedata pid="101" name="Start paddling" tags="" position="3170,568" size="100,100">You paddle out into the street. 
 
 Fish jump into your kayak, and debris from the cherry festival floats around you. 
 
 On the plus side, you get some awesome photos!
 
 //+1 endurance//
-[[Arrive at flood site]]</tw-passagedata><tw-passagedata pid="103" name="Arrive at flood site" tags="" position="3351,571" size="100,100">Location: the Upper Lake Dam
+[[Arrive at flood site]]</tw-passagedata><tw-passagedata pid="102" name="Arrive at flood site" tags="" position="3351,571" size="100,100">Location: the Upper Lake Dam
 
 Volunteers are stacking sandbags by the road, with a DNR worker leading the effort.
 
@@ -802,25 +802,25 @@ A houseboat floats on the overflowing river, with a lady sitting on deck and &qu
 [[Interview the DNR worker]]
 [[Talk to the houseboat lady]]
 [[Take photos of the flood site]]
-[[Record your observations]]</tw-passagedata><tw-passagedata pid="104" name="Yogurt" tags="Endurance" position="2540,297" size="100,100">You take a yogurt cup. Mmm. Sweet, protein-rich goodness.
+[[Record your observations]]</tw-passagedata><tw-passagedata pid="103" name="Yogurt" tags="Endurance" position="2540,297" size="100,100">You take a yogurt cup. Mmm. Sweet, protein-rich goodness.
 
 K. Jones won&#39;t even notice. Probably.
 
 //+2 endurance//(set: $endurance to it + 2)
 //-1 trust//(set: $trust to it - 1) 
-[[Back to your desk-&gt;Get Ready part 2]]</tw-passagedata><tw-passagedata pid="105" name="Crackers" tags="Endurance" position="2542,184" size="100,100">You nibble on a few crackers.
+[[Back to your desk-&gt;Get Ready part 2]]</tw-passagedata><tw-passagedata pid="104" name="Crackers" tags="Endurance" position="2542,184" size="100,100">You nibble on a few crackers.
 
 They&#39;re not exactly nourishing, but it&#39;s better than nothing. 
 
 //+1 endurance//(set: $endurance to it + 1)
 
-[[Back to your desk-&gt;Get Ready part 2]]</tw-passagedata><tw-passagedata pid="106" name="Swim for it" tags="" position="2966,316" size="100,100">The rushing water comes up to your knees.
+[[Back to your desk-&gt;Get Ready part 2]]</tw-passagedata><tw-passagedata pid="105" name="Swim for it" tags="" position="2966,316" size="100,100">The rushing water comes up to your knees.
 
 At first you think you might make it!
 
 (text-style:&quot;sway&quot;)[Then the current sweeps you off your feet. ]
 
-[[Just keep swimming...-&gt;Eject: Just keep swimming...]]</tw-passagedata><tw-passagedata pid="107" name="Wait for rescue" tags="" position="2973,474" size="100,100">You sit on your car roof, contemplating the meaning of life.
+[[Just keep swimming...-&gt;Eject: Just keep swimming...]]</tw-passagedata><tw-passagedata pid="106" name="Wait for rescue" tags="" position="2973,474" size="100,100">You sit on your car roof, contemplating the meaning of life.
 
 Then a retired firefighter swings by to rescue you. 
 
@@ -836,13 +836,13 @@ He even grabs some ice cream from the back and shares it with you.
 
 //Get great quote//
 
-[[Arrive at flood site]]]</tw-passagedata><tw-passagedata pid="108" name="Eject: Just keep swimming..." tags="" position="3104,317" size="100,100">You end up in a lake, which used to be the high school football field.  
+[[Arrive at flood site]]]</tw-passagedata><tw-passagedata pid="107" name="Eject: Just keep swimming..." tags="" position="3104,317" size="100,100">You end up in a lake, which used to be the high school football field.  
 
 The good news: you&#39;re alive!
 
 The bad news: you lose your shoes, ruin all your tech, and sit on the bleachers for hours waiting to be rescued. 
 
-&#39;&#39;GAME OVER&#39;&#39;</tw-passagedata><tw-passagedata pid="109" name="Take photos on the way" tags="" position="3098,998" size="100,100">(if: $techie &gt;=3)[On the way downtown, you get some great shots with your zoom lens:
+&#39;&#39;GAME OVER&#39;&#39;</tw-passagedata><tw-passagedata pid="108" name="Take photos on the way" tags="" position="3098,998" size="100,100">(if: $techie &gt;=3)[On the way downtown, you get some great shots with your zoom lens:
 
 People kayaking down Shortbread Street, and a crate of fresh cherries floating down the road!
 
@@ -854,7 +854,7 @@ There&#39;s a crate of cherries floating through the water, but it ends up looki
 
 //Get okay photo//]
 
-[[Arrive at flood site]]</tw-passagedata><tw-passagedata pid="110" name="Ask for an interview" tags="" position="3096,888" size="100,100">The former chief is thrilled to chat with you.
+[[Arrive at flood site]]</tw-passagedata><tw-passagedata pid="109" name="Ask for an interview" tags="" position="3096,888" size="100,100">The former chief is thrilled to chat with you.
 
 The problem: he spends most of the ride trying to set you up with Khalisa (she&#39;s single, adventurous, loves yogurt and long walks on the beach). 
 
@@ -862,7 +862,7 @@ You&#39;re already almost at the flood site, but you should have time to squeeze
 
 [[Ask how the flood has affected his family.]]
 [[Ask for flood safety tips.]]
-[[Ask what caused the flood.]]</tw-passagedata><tw-passagedata pid="111" name="Talk to volunteer # 1" tags="" position="3580,208" size="100,100">A volunteer is standing off to the side, wiping rain off his glasses.
+[[Ask what caused the flood.]]</tw-passagedata><tw-passagedata pid="110" name="Talk to volunteer # 1" tags="" position="3580,208" size="100,100">A volunteer is standing off to the side, wiping rain off his glasses.
 
 (if: $social &gt;2)[He&#39;s thrilled when you ask to interview him!
 
@@ -874,19 +874,19 @@ Also, his favorite color and the names of his three German Shepherds.
 //Get volunteer info//](else:)[You ask for an interview, but he seems reluctant to talk to you.
 
 [[Offer to share some food with him.]]
-[[Ask if he&#39;ll talk off the record]]]</tw-passagedata><tw-passagedata pid="112" name="Interview the DNR worker" tags="" position="3579,557" size="100,100">The DNR worker looks relieved to see you. &quot;Oh, thank goodness! Another volunteer!&quot;
+[[Ask if he&#39;ll talk off the record]]]</tw-passagedata><tw-passagedata pid="111" name="Interview the DNR worker" tags="" position="3579,557" size="100,100">The DNR worker looks relieved to see you. &quot;Oh, thank goodness! Another volunteer!&quot;
 
 When you tell her you&#39;re a reporter, her relief changes to annoyance.
 
 &quot;Sorry, but we&#39;re literally swamped here. Help or get out of the way.&quot;
 
 [[Help move some sandbags.]]
-[[Talk to someone else.-&gt;Arrive at flood site]]</tw-passagedata><tw-passagedata pid="113" name="Talk to the houseboat lady" tags="" position="3588,863" size="100,100">The houseboat lady is thrilled to talk with you.
+[[Talk to someone else.-&gt;Arrive at flood site]]</tw-passagedata><tw-passagedata pid="112" name="Talk to the houseboat lady" tags="" position="3588,863" size="100,100">The houseboat lady is thrilled to talk with you.
 
 &quot;Houseboat, stay afloat!&quot; she chants.
 
 [[&quot;Can you tell me how the flood has affected you?&quot;]]
-[[&quot;What&#39;s the deal with the houseboat?&quot;]]</tw-passagedata><tw-passagedata pid="114" name="Take photos of the flood site" tags="" position="3583,706" size="100,100">(if: $tech &gt;= 3)[The conditions are terrible out here.
+[[&quot;What&#39;s the deal with the houseboat?&quot;]]</tw-passagedata><tw-passagedata pid="113" name="Take photos of the flood site" tags="" position="3583,706" size="100,100">(if: $tech &gt;= 3)[The conditions are terrible out here.
 
 Luckily you&#39;ve got a fully charged phone and a fancy zoom lens!
 
@@ -916,7 +916,7 @@ At least you can get a few photos of the volunteers.
 You manage to snap a few blurry shots.
 
 //Get awful photos//]
-[[Back to the dam-&gt;Arrive at flood site]]</tw-passagedata><tw-passagedata pid="115" name="Offer to share some food with him." tags="" position="3723,126" size="100,100">(if: $resourceful is &gt;=4)[You unwrap your sandwich and give the volunteer half.
+[[Back to the dam-&gt;Arrive at flood site]]</tw-passagedata><tw-passagedata pid="114" name="Offer to share some food with him." tags="" position="3723,126" size="100,100">(if: $resourceful is &gt;=4)[You unwrap your sandwich and give the volunteer half.
 
 It&#39;s a little soggy, but he still seems grateful.
 
@@ -934,7 +934,7 @@ He tells you about how he started volunteering.
 He shakes his head. &quot;Nah. Thanks, but I better get back to work.&quot;
 
 [[Ask if he&#39;ll talk off the record]]
-[[Find someone else to talk to-&gt;Arrive at flood site]]]</tw-passagedata><tw-passagedata pid="116" name="Ask if he&#39;ll talk off the record" tags="" position="3725,275" size="100,100">(if: $trust is &lt; 3)[He still doesn&#39;t seem convinced. &quot;Please don&#39;t put my name in your article, okay?&quot; 
+[[Find someone else to talk to-&gt;Arrive at flood site]]]</tw-passagedata><tw-passagedata pid="115" name="Ask if he&#39;ll talk off the record" tags="" position="3725,275" size="100,100">(if: $trust is &lt; 3)[He still doesn&#39;t seem convinced. &quot;Please don&#39;t put my name in your article, okay?&quot; 
 
 He tells you that he did flood training at the community center. 
 
@@ -950,7 +950,7 @@ He gives you an amazing quote, and tons of great info about volunteering!
 //Get great quote//
 //Get volunteering info//
 
-[[Back to the dam-&gt;Arrive at flood site]]]</tw-passagedata><tw-passagedata pid="117" name="Record your observations" tags="" position="3591,1014" size="100,100">(if: $techie &gt;=3)[You use your voice app to rattle off some notes: 
+[[Back to the dam-&gt;Arrive at flood site]]]</tw-passagedata><tw-passagedata pid="116" name="Record your observations" tags="" position="3591,1014" size="100,100">(if: $techie &gt;=3)[You use your voice app to rattle off some notes: 
 
 The overflowing dam, the 10 volunteers and the brand of rain jackets they&#39;re wearing, the make and models of the cars stranded in the street, even the name of the houseboat--Nora&#39;s Arc.
 
@@ -973,7 +973,7 @@ It&#39;s not exactly prize-winning prose, but it&#39;s better than nothing.
 
 //Get basic observations//]
 
-[[Back to the dam-&gt;Arrive at flood site]]</tw-passagedata><tw-passagedata pid="118" name="Help move some sandbags." tags="" position="3739,643" size="100,100">(if: $endurance is &gt;=3)[You grab some sandbags and start stacking. Easy, peasy. 
+[[Back to the dam-&gt;Arrive at flood site]]</tw-passagedata><tw-passagedata pid="117" name="Help move some sandbags." tags="" position="3739,643" size="100,100">(if: $endurance is &gt;=3)[You grab some sandbags and start stacking. Easy, peasy. 
 
 The DNR worker looks impressed. &quot;You&#39;re tougher than you look. I guess I can answer a few questions.&quot;
 
@@ -1007,16 +1007,16 @@ She agrees to answer one question.
 [[Where can people get sandbags to protect their homes?]]
 [[When will the situation be under control?]]
 [[How did the city let this happen?]]]
-</tw-passagedata><tw-passagedata pid="119" name="Look around for something useful" tags="" position="2920,679" size="100,100">You see a deli with a (text-style:&quot;blink&quot;)[Come On In!] sign flashing. 
+</tw-passagedata><tw-passagedata pid="118" name="Look around for something useful" tags="" position="2920,679" size="100,100">You see a deli with a (text-style:&quot;blink&quot;)[Come On In!] sign flashing. 
 
 Another driver is stranded with you, a pair of kayaks strapped to their roof. 
 
 [[Ask to borrow a kayak]]
-[[Go into the deli and use their wifi-&gt;Use deli wifi]]</tw-passagedata><tw-passagedata pid="120" name="Ask how the flood has affected his family." tags="" position="3250,1051" size="100,100">&quot;We&#39;re doing fine,&quot; he says. &quot;But our house is on high ground, and we&#39;ve got plenty of sandbags. Other folks aren&#39;t so lucky.&quot;
+[[Go into the deli and use their wifi-&gt;Use deli wifi]]</tw-passagedata><tw-passagedata pid="119" name="Ask how the flood has affected his family." tags="" position="3250,1051" size="100,100">&quot;We&#39;re doing fine,&quot; he says. &quot;But our house is on high ground, and we&#39;ve got plenty of sandbags. Other folks aren&#39;t so lucky.&quot;
 
 //Get great quote//
 
-[[Arrive at flood site]]</tw-passagedata><tw-passagedata pid="121" name="Ask for flood safety tips." tags="" position="3246,830" size="100,100">He gives you some great tips:
+[[Arrive at flood site]]</tw-passagedata><tw-passagedata pid="120" name="Ask for flood safety tips." tags="" position="3246,830" size="100,100">He gives you some great tips:
 
 Don&#39;t try to drive through floodwater, and use sandbags to protect your house.
 
@@ -1025,19 +1025,19 @@ Don&#39;t try to drive through floodwater, and use sandbags to protect your hous
 //Get great quote//
 //Get safety tips//
 
-[[Arrive at flood site]]</tw-passagedata><tw-passagedata pid="122" name="Ask what caused the flood." tags="" position="3246,941" size="100,100">He gives you a funny look.
+[[Arrive at flood site]]</tw-passagedata><tw-passagedata pid="121" name="Ask what caused the flood." tags="" position="3246,941" size="100,100">He gives you a funny look.
 
 &quot;Rain, I reckon,&quot; he says.
 
 //Get nothing--better luck next time//
 
 [[Arrive at flood site]]
-</tw-passagedata><tw-passagedata pid="123" name="Talk to volunteer # 2" tags="" position="3576,400" size="100,100">You approach a volunteer as she&#39;s just packing up.
+</tw-passagedata><tw-passagedata pid="122" name="Talk to volunteer # 2" tags="" position="3576,400" size="100,100">You approach a volunteer as she&#39;s just packing up.
 
 &quot;Sorry, can&#39;t talk, gotta go sample the bacterial contamination in the epilimnion of Upper Lake,&quot; she says.
 
 (if: $bookworm &gt;=3)[[[&quot;Interesting. Are you worried the flooding will contribute to toxic algae growth-&gt;Bookworm answer]]]
-(else:)[[[&quot;Um....epi-whatium?&quot;-&gt;Non-bookworm answer]]]</tw-passagedata><tw-passagedata pid="124" name="&quot;What&#39;s the deal with the houseboat?&quot;" tags="" position="3779,981" size="100,100">&quot;I&#39;ve been telling everyone for years,&quot; she says. &quot;Houseboats are the future!&quot; 
+(else:)[[[&quot;Um....epi-whatium?&quot;-&gt;Non-bookworm answer]]]</tw-passagedata><tw-passagedata pid="123" name="&quot;What&#39;s the deal with the houseboat?&quot;" tags="" position="3779,981" size="100,100">&quot;I&#39;ve been telling everyone for years,&quot; she says. &quot;Houseboats are the future!&quot; 
 
 Uh oh. This could go on for a while. 
 
@@ -1052,7 +1052,7 @@ The plus side: now you know more about houseboats than literally anyone else you
 
 //Get quote about houseboats//
 
-[[Back to the dam (finally!!!)-&gt;Arrive at flood site]]]</tw-passagedata><tw-passagedata pid="125" name="Interview her" tags="" position="3945,431" size="100,100">The lake expert is happy to talk to a fellow limnology nerd.
+[[Back to the dam (finally!!!)-&gt;Arrive at flood site]]]</tw-passagedata><tw-passagedata pid="124" name="Interview her" tags="" position="3945,431" size="100,100">The lake expert is happy to talk to a fellow limnology nerd.
 
 She tells you that she&#39;s been warning about a catastrophic flood for years.
 
@@ -1062,7 +1062,7 @@ She tells you that she&#39;s been warning about a catastrophic flood for years.
 //Get lake background info//
 //Get contact: limnologist//
 
-[[Back to the dam -&gt;Arrive at flood site]]</tw-passagedata><tw-passagedata pid="126" name="Ask to go with her" tags="" position="3944,554" size="100,100">(if: $trust &gt;=3)[She&#39;s happy to take a fellow limnologist along for the ride! 
+[[Back to the dam -&gt;Arrive at flood site]]</tw-passagedata><tw-passagedata pid="125" name="Ask to go with her" tags="" position="3944,554" size="100,100">(if: $trust &gt;=3)[She&#39;s happy to take a fellow limnologist along for the ride! 
 
 She gives you some spare waders to put on, and you go out into the shallows, where she takes samples with some fancy tech.
 
@@ -1080,18 +1080,18 @@ Unfortunately, it also takes you an hour just to make it back to the dam.
 &quot;Sorry,&quot; she says. &quot;It&#39;s wild enough out there without bringing a tourist.&quot;
 
 [[Ask to interview her-&gt;Interview her]]
-[[Find someone else to talk to-&gt;Arrive at flood site]]</tw-passagedata><tw-passagedata pid="127" name="Bookworm answer" tags="" position="3737,513" size="100,100">She looks surprised. &quot;Are you a limnologist, too?&quot;
+[[Find someone else to talk to-&gt;Arrive at flood site]]</tw-passagedata><tw-passagedata pid="126" name="Bookworm answer" tags="" position="3737,513" size="100,100">She looks surprised. &quot;Are you a limnologist, too?&quot;
 
 &quot;Just a reporter, but I&#39;m also an avid reader.&quot;
 
 She frowns. &quot;I could answer a few questions, but then I need to run.&quot;
 
 [[Interview her]]
-[[Ask to go with her]]</tw-passagedata><tw-passagedata pid="128" name="Non-bookworm answer" tags="" position="3734,391" size="100,100">She shakes her head. 
+[[Ask to go with her]]</tw-passagedata><tw-passagedata pid="127" name="Non-bookworm answer" tags="" position="3734,391" size="100,100">She shakes her head. 
 
 &quot;Sorry, it&#39;s a lake science thing. You wouldn&#39;t understand.&quot;
 
-[[Back to the dam-&gt;Arrive at flood site]]]</tw-passagedata><tw-passagedata pid="129" name="&quot;Can you tell me how the flood has affected you?&quot;" tags="" position="3775,847" size="100,100">&quot;The flood has been lovely,&quot; she says. &quot;Though all those volunteers would probably be happier on a houseboat.&quot;
+[[Back to the dam-&gt;Arrive at flood site]]]</tw-passagedata><tw-passagedata pid="128" name="&quot;Can you tell me how the flood has affected you?&quot;" tags="" position="3775,847" size="100,100">&quot;The flood has been lovely,&quot; she says. &quot;Though all those volunteers would probably be happier on a houseboat.&quot;
 
 (if: $trust &gt;=3)[You agree with her, they probably would.
 
@@ -1113,21 +1113,21 @@ Nora the houseboat lady isn&#39;t convinced. &quot;Save your debate team argumen
 
 //Get quote about houseboats//
 
-[[Back to the dam -&gt;Arrive at flood site]]]]</tw-passagedata><tw-passagedata pid="130" name="Where can people get sandbags to protect their homes?" tags="" position="3957,917" size="100,100">She tells you there are free sandbags at the community center. 
+[[Back to the dam -&gt;Arrive at flood site]]]]</tw-passagedata><tw-passagedata pid="129" name="Where can people get sandbags to protect their homes?" tags="" position="3957,917" size="100,100">She tells you there are free sandbags at the community center. 
 
 &quot;The problem is, a lot of people can&#39;t get to them,&quot; she says. &quot;We need a better way to reach people.&quot;  
 
 //Get great quote//
 //Get info: where to find sandbags//
 
-[[Back to the dam-&gt;Arrive at flood site]]</tw-passagedata><tw-passagedata pid="131" name="When will the situation be under control?" tags="" position="3952,681" size="100,100">She tells you the situation depends on how much it rains.
+[[Back to the dam-&gt;Arrive at flood site]]</tw-passagedata><tw-passagedata pid="130" name="When will the situation be under control?" tags="" position="3952,681" size="100,100">She tells you the situation depends on how much it rains.
 
 &quot;We&#39;re expecting things to get worse before they get better.&quot;
 
 //Get great quote//
 //Get flood info//]
 
-[[Back to the dam -&gt;Arrive at flood site]]</tw-passagedata><tw-passagedata pid="132" name="How did the city let this happen?" tags="" position="3950,796" size="100,100">The DNR worker looks annoyed.
+[[Back to the dam -&gt;Arrive at flood site]]</tw-passagedata><tw-passagedata pid="131" name="How did the city let this happen?" tags="" position="3950,796" size="100,100">The DNR worker looks annoyed.
 
 &quot;There are many complex factors,&quot; she says. &quot;You&#39;re a reporter, shouldn&#39;t you know that? Sorry, no more questions.&quot;
 
