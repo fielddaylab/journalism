@@ -1928,7 +1928,7 @@ and&#96; &#96;
 ]
 _minutes  minutes&#96; &#96;
 ]]
-remaining.}</tw-passagedata><tw-passagedata pid="221" name="TUTORIAL FOR LINDY" tags="" position="1625,75" size="200,200">Hi!
+remaining.}</tw-passagedata><tw-passagedata pid="221" name="TUTORIAL FOR LINDY" tags="" position="1700,0" size="200,200">Hi!
 
 Here are instructions for how to use a few of the things I&#39;ve implemented.
 
@@ -1936,16 +1936,7 @@ Here are instructions for how to use a few of the things I&#39;ve implemented.
 $increment[$resourcefulName](set: $resourceful to it + 1)
 This prints //+1 Resourcefulness// in blue italics, and makes it easy to change stat names later on. The set: macro actually changes the stat. There is also $decrement[$techieName] for reducing stats (orange italics) and $2crement[$bookwormName] for increasing by 2 at a time.
 
-&#39;&#39;Clocks/hub zones:&#39;&#39;
-(set: $currentTime to 120)
-Put this on the passage before the clock will be active, so it doesn&#39;t get called every time you return.
-
-(display: &quot;PRINT TIME&quot;)
-Put this in the &quot;hub&quot; where time is shown - it gives a floating purple indicator of remaining time.
-
-{(unless:(history:) contains &quot;Example activity&quot; or $currentTime &lt; 30)[
-[[Example activity - 30 minutes-&gt;Example activity]]
-]}
+If you want to change the name of a stat (e.g. &quot;Bookworm&quot; to &quot;Egghead&quot;) you can find the $bookwormName variables in the &quot;STARTUP VALUES&quot; passage in the top left corner of the twine project.
 
 
 &#39;&#39;Gain inventory pieces:&#39;&#39;
@@ -1953,7 +1944,33 @@ Put this in the &quot;hub&quot; where time is shown - it gives a floating purple
 The syntax for this one is different because it&#39;s a custom macro - it will print &quot;Gained Snippet: Photo: Hospital ducks&quot; in green and add it to your usable snippets.
 
 The other half of this process is adding the actual body of the snippet - to do that, create a new passage in Twine that&#39;s not linked to anything. It must have a name //exactly// matching the second string (e.g. &quot;Hospital ducks&quot;). You should then add a tag for the quality (Bad, Good, Great) and type (Photo, etc.). This passage contains any text or images that are to be shown on the final compiled article.
-</tw-passagedata><tw-passagedata pid="222" name="Example activity" tags="" position="1625,295" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+
+&#39;&#39;Clocks/hub zones:&#39;&#39;
+(set: $currentTime to 120)
+Put this on the passage before the clock will be active, so it doesn&#39;t get called every time you return. Alternatively use the following script to set a timer only on the first visit to this passage:
+(if: visits is 1)[(set:$currentTime to 120)]
+
+(display: &quot;PRINT TIME&quot;)
+Put this in the &quot;hub&quot; where time is shown - it gives a floating purple indicator of remaining time.
+
+($hubChoice: &quot;Passage&quot;,&quot;Passage description (10 minutes)&quot;, 10)
+This creates a link to a passage (1st parameter) with the given description (2nd parameter). Once clicked, it subtracts the listed number of minutes (3rd parameter) and disables itself, so the hub cannot be accessed again. &#39;&#39;This will not draw arrows to connected passages.&#39;&#39;
+
+(set: $currentTime to it - 10)
+Use this to just subtract time inline without restricting any choices. This can be used for variable time expenditure - for example, by 
+
+(unless: (history:) contains &quot;Passage&quot;)[ [[Passage]] ]
+Use this to just create a link that disappears after clicking.
+
+(display: &quot;Office 1 - Clock&quot;)
+where &quot;Office 1 - Clock&quot; contains
+{(if: $currentTime is &lt;=30)[
+	[[You have just enough time to compile the story now.]]
+](else:)[
+	[[Return to your desk-&gt;Breaking News Story]] 
+]}
+
+This structure is used to show the &quot;Return to desk&quot; link at the bottom of each &quot;spoke&quot; of the hub area. This sends you back to the hub, unless you have less than 30 minutes left - you only have time to  </tw-passagedata><tw-passagedata pid="222" name="Passage" tags="" position="1925,0" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";var _slicedToArray=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,a=!1,i=void 0;try{for(var o,s=e[Symbol.iterator]();!(r=(o=s.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){a=!0,i=e}finally{try{!r&&s.return&&s.return()}finally{if(a)throw i}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}!function(){
 /**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
