@@ -1904,7 +1904,7 @@ When you get back, the scientists pause in their work, drawn to the tantalizing 
 
 [[Twin Lakes Map-&gt;Science Story Map]]</tw-passagedata><tw-passagedata pid="188" name="&quot;What made this time so bad, compared to past floods?&quot;" tags="" position="7575,1175" size="100,100">&quot;Right now the lake levels are higher than ever before,&quot; he says. &quot;Plus, we just had the worst storm Twin Lakes has seen in decades. We were doomed from the get-go.&quot;
 
-[[&quot;Why are the lake levels so high?&quot;]]</tw-passagedata><tw-passagedata pid="189" name="&quot;Why are the lake levels so high?&quot;" tags="" position="7575,1025" size="100,100">&quot;To be honest, I&#39;m not sure,&quot; he says. &quot;You&#39;ll have to talk to someone else about that.&quot;</tw-passagedata><tw-passagedata pid="190" name="Quick Interview: Hydroecology Expert" tags="" position="6875,1023.3333333333334" size="100,100">($statGate: $socialName, 4)
+[[&quot;Why are the lake levels so high?&quot;]]</tw-passagedata><tw-passagedata pid="189" name="&quot;Why are the lake levels so high?&quot;" tags="" position="7575,1025" size="100,100">&quot;To be honest, I&#39;m not sure,&quot; he says. &quot;You&#39;ll have to talk to someone else about that.&quot;</tw-passagedata><tw-passagedata pid="190" name="Quick Interview: Hydroecology Expert" tags="" position="6875,1023" size="100,100">($statGate: $socialName, 4)
 (if: $social &lt;4)[&quot;Well..... I guess I could chat for a minute,&quot; she says.
 
 She tells you about one of the main causes of the flooding: more extreme weather from climate change. 
@@ -2213,7 +2213,7 @@ Plus six or seven volunteers, and about a thousand mosquitoes.
 * Twin Lakes has lost nearly 50% of its original wetlands
 * In some other parts of the region, up to 90% of the original wetlands are gone!
 
-//Get stats: loss of wetlands//
+($gainSnippet:&quot;Graph&quot;,&quot;Wetland loss stats&quot;)
 
 [[Ask her to confirm WAH&#39;s information]]
 [[Ask her if the wetlands are protected.]]
@@ -2226,15 +2226,20 @@ She explains the state policy that says developers have to create a new wetland 
 ($gainSnippet: &quot;Quote&quot;,&quot;Wetland policy&quot;)
 
 [[&quot;Do you have sources for all this information?&quot;]]</tw-passagedata><tw-passagedata pid="237" name="Marsh Map" tags="" position="9225,400" size="100,200">&#39;&#39;Location: Snakebite Marsh&#39;&#39;
-(text-colour:purple)[time constraints not yet implemented]
+(if:visits is 1)[(set:$currentTime to 150)]
+(if:$currentTime &gt; 30)[
 Mosquitoes and dragonflies are buzzing around you, making it hard to think.
 
 You&#39;ve got some great stuff, but you&#39;ll need to do more digging if you want this to be a science story.
 
-[[Take photos of the marsh]]
+You have (display:&quot;PRINT TIME&quot;) remaining to submit this story.
+
+($hubChoice:&quot;Take photos of the marsh&quot;,&quot;Take photos of the marsh&quot;,15) 
 [[Talk to volunteer heading out onto the trail]]
 [[Talk to volunteer with bag full of seed packets]]
-[[Go to the Department of Limnology]]</tw-passagedata><tw-passagedata pid="238" name="Take photos of the marsh" tags="" position="9375,450" size="100,100">($statGate:$techieName, 5)
+($hubChoice:&quot;Talk to volunteer with bag full of seed packets&quot;,&quot;Talk to volunteer with bag full of seed packets&quot;,15) 
+($hubChoice:&quot;Go to the Department of Limnology&quot;,&quot;Go to the Department of Limnology&quot;,30)]
+(else:)[(display:&quot;Wetlands Story Construction&quot;)]</tw-passagedata><tw-passagedata pid="238" name="Take photos of the marsh" tags="" position="9375,450" size="100,100">($statGate:$techieName, 5)
 (if: $techie &gt;4)[You notice a pair of sandhill cranes in the distance, surrounded by marshy water--and litter that got swept here by the storm.
 
 With your zoom lens, you get an amazing close-up photo!
@@ -2263,17 +2268,20 @@ You ask if he has time to answer a few questions.
 
 &quot;That depends,&quot; he says. &quot;You okay with getting your feet wet?&quot;
 
-[[Join him on the hike.]]
+($hubChoice:&quot;Join him on the hike.&quot;,&quot;join him on the hike.&quot;,30)
 [[Thanks, but no thanks.-&gt;Marsh Map]]</tw-passagedata><tw-passagedata pid="240" name="Go to the Department of Limnology" tags="" position="8075,875" size="200,100">&#39;&#39;Location: Department of Limnology&#39;&#39;
-(text-colour:purple)[time constraints not yet implemented]
+(if: $currentTime &gt;=30)[
+You have (display:&quot;PRINT TIME&quot;) remaining to submit this story.
+
 The Department of Limnology is right on the shoreline.
 
 You look out at the lake and see someone who looks like they&#39;re standing, impossibly, on water. 
 
 As you get closer, you realize that the dock is completely submerged!
 
-[[Take photos]]
-[[Ask if they have time for an interview.]]</tw-passagedata><tw-passagedata pid="241" name="Join him on the hike." tags="" position="9375,200" size="100,100">You follow him on a narrow, soggy trail. 
+($hubChoice: &quot;Take photos&quot;,&quot;Take photos&quot;,15)
+[[Ask if they have time for an interview.]] ]
+(else:)[(display:&quot;Wetlands Story Construction&quot;)]</tw-passagedata><tw-passagedata pid="241" name="Join him on the hike." tags="" position="9373.333333333334,201.66666666666666" size="100,100">You follow him on a narrow, soggy trail. 
 
 ($statGate: $enduranceName, 5)
 (if: $endurance &gt;4)[He&#39;s a brisk walker, but thanks to your endurance, you keep up easily.
@@ -2300,8 +2308,8 @@ He tells you that he remembers when there were wetlands all over town.
 
 &quot;Most of it&#39;s gone now,&quot; he says. &quot;It&#39;s heartbreaking. Animals are losing their habitats, and there won&#39;t be any town left if Twin Lakes keeps flooding all the time!&quot;
 
-//Get color quote//
-//Get anecdotal info: marsh pollution//
+($gainSnippet:&quot;Quote&quot;,&quot;Marsh loss&quot;)
+($ginaSnippet:&quot;Observation&quot;,&quot;Marsh pollution&quot;)
 
 [[Marsh Map]]</tw-passagedata><tw-passagedata pid="243" name="&quot;Do you have sources for all this information?&quot;" tags="" position="9100,475" size="100,100">She tells you the sources are all up on the website. &quot;We use research from the Limnology Department,&quot; she says. &quot;You should visit them!&quot;
 
@@ -2318,7 +2326,7 @@ He tells you that he remembers when there were wetlands all over town.
 
 She&#39;s happy to give you another interview. Looks like all that light reading on inland aquatic ecosystems and the local drainage basin is coming in handy!
 
-[[Ask her about the wetlands]]](elseif: $social &gt;4)[($statGate:$socialName, 5)
+($hubChoice: &quot;Ask her about the wetlands&quot;,&quot;Ask her about the wetlands&quot;,15)](elseif: $social &gt;4)[($statGate:$socialName, 5)
 At first they don&#39;t seem thrilled about the idea. 
 
 Then they notice the coffee and donuts you brought with you--your favorite social currency. 
@@ -2327,7 +2335,7 @@ Then they notice the coffee and donuts you brought with you--your favorite socia
 
 One of the researchers grins. &quot;You had me at donuts.&quot;
 
-[[Ask her about the wetlands]]](elseif: $resourceful &gt;4)[
+($hubChoice: &quot;Ask her about the wetlands&quot;,&quot;Ask her about the wetlands&quot;,15)](elseif: $resourceful &gt;4)[
 ($statGate:$socialName, 5)
 At first they don&#39;t seem thrilled about the idea. 
 ($statGate:$resourcefulName, 5)
@@ -2337,7 +2345,7 @@ Then they notice the coffee and donuts you brought with you. You&#39;re nothing 
 
 One of the researchers grins. &quot;You had me at donuts.&quot;
 
-[[Ask her about the wetlands]]](else:)[($statGate:$socialName, 5)
+($hubChoice: &quot;Ask her about the wetlands&quot;,&quot;Ask her about the wetlands&quot;,15)](else:)[($statGate:$socialName, 5)
 ($statGate:$resourcefulName, 5)
 The researchers have been out here all morning--they&#39;re a little too hangry for a long chat.
 
@@ -2345,10 +2353,11 @@ They give you a quick, rushed-sounding statement: yes, a lot of the wetlands hav
 
 &quot;Check our website,&quot; they say. &quot;You can find all our research there.&quot;
 
-//Get annoyed quote: wetlands and flooding//
+($gainSnippet: &quot;Quote&quot;,&quot;Annoyed limnologists&quot;)
 
-[[Check Limnology Department Website.]]
-[[Look around for someone else to talk to.]]]</tw-passagedata><tw-passagedata pid="246" name="Ask her about the wetlands" tags="" position="8000,1275" size="100,100">&quot;Wetlands stop flooding by giving water somewhere to go,&quot; she says. &quot;The problem is, our wetlands keep shrinking.&quot;
+($hubChoice: &quot;Check Limnology Department Website&quot;,&quot;Check Limnology Department Website&quot;,15)
+($hubChoice: &quot;Look around for someone else to talk to.&quot;,&quot;Look around for someone else to talk to.&quot;,15)
+]</tw-passagedata><tw-passagedata pid="246" name="Ask her about the wetlands" tags="" position="8000,1275" size="100,100">&quot;Wetlands stop flooding by giving water somewhere to go,&quot; she says. &quot;The problem is, our wetlands keep shrinking.&quot;
 
 (link-reveal:&quot;\&quot;What do you mean, shrinking?\&quot;&quot;)[
 
@@ -2356,8 +2365,8 @@ They give you a quick, rushed-sounding statement: yes, a lot of the wetlands hav
 
 [[Ask her to confirm WAH&#39;s information]]
 [[Ask her if the wetlands are protected.]]
-[[Ask what percentage of local wetlands have been lost.-&gt;Wetland statistics]]]</tw-passagedata><tw-passagedata pid="247" name="Check Limnology Department Website." tags="" position="8125,1400" size="100,100">($statGate: $bookwormName,4
-(if: $bookworm &gt;3)[You go online and search their website, moving quickly thanks to your speed-reading skills. 
+[[Ask what percentage of local wetlands have been lost.-&gt;Wetland statistics]]]</tw-passagedata><tw-passagedata pid="247" name="Check Limnology Department Website." tags="" position="8125,1400" size="100,100">($statGate: $bookwormName,4)  
+(if: $bookworm &gt;3 or $techie &gt; 3)[You go online and search their website, moving quickly thanks to your speed-reading skills. 
 
 It&#39;s full of great research and statistics!
 
@@ -2369,7 +2378,7 @@ It&#39;s not quite as exciting quoting a website, instead of a person, but youll
 ($gainSnippet: &quot;Fact&quot;,&quot;Wetlands and flooding&quot;)
 
 [[Look around for someone else to talk to.]]
-[[Twin Lakes Map-&gt;Wetlands Story Construction]]</tw-passagedata><tw-passagedata pid="248" name="Look around for someone else to talk to." tags="" position="8275,1000" size="100,100">You walk along the Limnology building, toward the dock.
+[[-&gt;Go to the Department of Limnology]]]</tw-passagedata><tw-passagedata pid="248" name="Look around for someone else to talk to." tags="" position="8275,1000" size="100,100">You walk along the Limnology building, toward the dock.
 
 At first it seems deserted. Then you notice a scientist loading up gear on a small research boat!
 
@@ -2465,11 +2474,16 @@ Luckily, a firefighter sees you coming. He navigates to you and helps you and th
 (set: $currentTime to it - 10)
 You do feel like a bit of a //muenster//, but at least you made it out alive. 
 
-[[Return to the dam-&gt;Arrive at flood site]]</tw-passagedata><tw-passagedata pid="257" name="Wetlands Story Construction" tags="" position="8700,1075" size="100,100">Time to compile that big story on the wetlands.
+[[Return to the dam-&gt;Arrive at flood site]]</tw-passagedata><tw-passagedata pid="257" name="Wetlands Story Construction" tags="" position="8700,1075" size="100,100">(if: $currentTime &lt;=30)[Time to compile that big story on the wetlands!
 (set: $storyType to &quot;Investigation&quot;)
 (set: $snippetLimit to 6)
 (set: $destination to &quot;TO BE CONTINUED&quot;)
-(display: &quot;STORY EVALUATION&quot;)</tw-passagedata><tw-passagedata pid="258" name="Thank her and end interview" tags="" position="8225,1525" size="100,100">You could use one more perspective for your story.
+(display: &quot;STORY EVALUATION&quot;)]
+(else:)[There&#39;s still time to collect information for this story!
+
+[[Go to the Department of Limnology]]
+[[Call the Big Business Bureau]]
+[[Marsh Map]]</tw-passagedata><tw-passagedata pid="258" name="Thank her and end interview" tags="" position="8225,1525" size="100,100">You could use one more perspective for your story.
 
 What do you do? 
 
@@ -2503,14 +2517,25 @@ From out here, it all looks pretty peaceful. Then you notice the houses on the s
 ($gainSnippet: &quot;Photo&quot;,&quot;Shoreline damage&quot;)
 ($gainSnippet: &quot;Quote&quot;,&quot;Watershed connections&quot;)
 
-[[Wetlands Story Construction]]</tw-passagedata><tw-passagedata pid="262" name="Call the Big Business Bureau" tags="" position="9225,850" size="200,100">You dig up the number of the Big Business Bureau. The first time you call, a cheerful-sounding receptionist picks up.
+[[Wetlands Story Construction]]</tw-passagedata><tw-passagedata pid="262" name="Call the Big Business Bureau" tags="" position="9225,850" size="200,100">(if: (history:) contains &quot;Tell them you&#39;re writing about how business is destroying the wetlands.&quot;)[ 
+($statGate:$techieName, 3)
+(if:$techie &gt;=3)[You remember a method to set yourself as a //private caller// and even install a subtle voice changer. Hopefully now they won&#39;t recognize you as that mudraking journalist from earlier.
+
+&quot;How can I help you?&quot;
+
+[[Tell them their name came up in a story and you want to get their perspective.]] ](else:)[You give the Big Business Bureau another call. This time it goes straight to voicemail. Figures.
+
+[[Wetlands Story Construction]]
+]
+
+](else:)[You dig up the number of the Big Business Bureau. The first time you call, a cheerful-sounding receptionist picks up.
 
 &quot;How can I help you?&quot;
 
 [[Tell them you&#39;re writing about how business is destroying the wetlands.]]
-[[Tell them their name came up in a story and you want to get their perspective.]]</tw-passagedata><tw-passagedata pid="263" name="Tell them their name came up in a story and you want to get their perspective." tags="" position="9350,975" size="100,100">It takes a few minutes, but she tracks down someone to talk with you: one of the lead organizers!
+[[Tell them their name came up in a story and you want to get their perspective.]] ]</tw-passagedata><tw-passagedata pid="263" name="Tell them their name came up in a story and you want to get their perspective." tags="" position="9350,975" size="100,100">It takes a few minutes, but she tracks down someone to talk with you: one of the lead organizers!
 
-[[Interview business organizer]]</tw-passagedata><tw-passagedata pid="264" name="Interview business organizer" tags="" position="9350,1100" size="100,100">He&#39;s happy to talk with you. &quot;I&#39;ve worked hard to bring new businesses to Twin Lakes,&quot; he says. &quot;The changes here recently has been a dream come true!&quot;
+($hubChoice: &quot;Interview business organizer&quot;,&quot;Interview business organizer&quot;,30)</tw-passagedata><tw-passagedata pid="264" name="Interview business organizer" tags="" position="9350,1100" size="100,100">He&#39;s happy to talk with you. &quot;I&#39;ve worked hard to bring new businesses to Twin Lakes,&quot; he says. &quot;The changes here recently has been a dream come true!&quot;
 
 [[Ask him why new businesses are so important.]]
 [[Ask him why he pushed to get rid of wetland protections.]]</tw-passagedata><tw-passagedata pid="265" name="Ask him why new businesses are so important." tags="" position="9350,1225" size="100,100">&quot;New businesses are what&#39;s keeping this town alive and growing,&quot; he says. &quot;Just this year, we&#39;ve got a dozen new shops, new office buildings, and a brand new hospital!&quot;
